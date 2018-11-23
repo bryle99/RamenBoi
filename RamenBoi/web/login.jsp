@@ -12,8 +12,25 @@
         <title>Log in</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
     </head>
     <body>
+         <header class="blog-header py-3 border-bottom border-dark">
+                <div class="text-center"><h1>Ramen <span class="boi">Boi</span></h1></div>
+            </header>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                  <a class="nav-link text-muted" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-muted" href="order.jsp">Order</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-muted" href="#">Link</a>
+                </li>
+            </ul><br><br>
                 <div>
                     <form action="" method = "POST">
                         
