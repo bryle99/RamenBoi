@@ -27,7 +27,7 @@
                   <a class="nav-link text-muted" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Order</a>
+                  <a class="nav-link text-muted" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-muted" href="#">Link</a>
