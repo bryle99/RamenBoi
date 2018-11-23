@@ -7,16 +7,18 @@
 
 <%
     try{
+        Class.forName("com.mysql.jdbc.Driver");
         String username = request.getParameter("user");   
         String password = request.getParameter("pass");
-        Class.forName("com.mysql.jdbc.Driver");  
+      
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement pst = conn.prepareStatement("Select username,password from user where username='?' and password='?'");
+        PreparedStatement pst = conn.prepareStatement("Select username,password from user where username=? and password=?");
         pst.setString(1, username);
         pst.setString(2, password);
         ResultSet rs = pst.executeQuery();                        
         if(rs.next())           
-           out.println("Valid login credentials");        
+           out.println("Valid login credentials");   
+        
         else
            out.println("Invalid login credentials");            
    }
