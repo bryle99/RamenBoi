@@ -32,10 +32,10 @@
                 </li>
             </ul><br><br>
                 <div>
-                    <form action="" method = "POST">
+                    <form action="validate.jsp" method = "POST">
                         
-                        Username : <input type = "text" name = "username" placeholder = "DEEZ NUTS"><br>
-                        Password : <input type ="text" name ="password" placeholder = "LMAO GOT EM"><br>
+                        Username : <input type = "text" name = "user" placeholder = "DEEZ NUTS"><br>
+                        Password : <input type ="text" name ="pass" placeholder = "LMAO GOT EM"><br>
                         <input type ="submit" >
                         
                     </form> 
