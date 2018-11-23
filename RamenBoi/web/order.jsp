@@ -4,38 +4,10 @@
     Author     : Rafael
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
-        
-        <title>Order</title>
-    </head>
-    <body>
-        
-        <div class="container">
-            <header class="blog-header py-3 border-bottom border-dark">
-                <div class="text-center"> <img id="ramenboi" src="assets/img/ramen-boy-logo.png"></div>
-            </header>
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="home.jsp">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="order.jsp">Order</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Link</a>
-                </li>
-            </ul>
-            
-            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-                <div class="col-md-6 px-0">
+<jsp:include page="headernav.jsp"/>
+        <div class="container">    
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+         
         <div class="row">
             <div class="col-md-6 col-md-offset-5">
             </div>
@@ -55,10 +27,11 @@
                             <option>Shio Ramen</option>
                             
                         </select>
-                <input type="submit" value="Choose"/>
+                        <input type="submit" value="Choose"/>
+                    </form>
             </div>
         </div>
-    </form>
- 
+        </div>
+        </div>            
     </body>
 </html>
