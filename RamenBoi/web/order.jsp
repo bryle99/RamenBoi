@@ -14,20 +14,20 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
         
-        <title>Home</title>
+        <title>Order</title>
     </head>
     <body>
         
         <div class="container">
             <header class="blog-header py-3 border-bottom border-dark">
-                <div class="text-center"><h1>Ramen Boi</h1></div>
+                <div class="text-center"><img id="ramenboi" src="assets/img/ramen-boy-logo.png"></div>
             </header>
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Home</a>
+                  <a class="nav-link text-muted" href="home.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Order</a>
+                  <a class="nav-link text-muted" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-muted" href="#">Link</a>
