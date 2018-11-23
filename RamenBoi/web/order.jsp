@@ -20,7 +20,7 @@
         
         <div class="container">
             <header class="blog-header py-3 border-bottom border-dark">
-                <div class="text-center"><img id="ramenboi" src="assets/img/ramen-boy-logo.png"></div>
+                <div class="text-center"> <img id="ramenboi" src="assets/img/ramen-boy-logo.png"></div>
             </header>
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
