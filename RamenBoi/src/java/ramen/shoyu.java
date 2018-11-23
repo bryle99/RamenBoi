@@ -12,6 +12,6 @@ package ramen;
 public class shoyu extends ramenBase{
     
     public shoyu(){
-    
+        this.setPrice(5);
     }
 }
