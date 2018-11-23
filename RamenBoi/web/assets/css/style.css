@@ -8,3 +8,14 @@ and open the template in the editor.
     Author     : bryle
 */
 
+body{
+    background-color: #fafad2;
+}
+
+.nav{
+    font-size: 1.5rem;
+}
+
+.bg-dark{
+    background-color: #2e2e2e;
+}
