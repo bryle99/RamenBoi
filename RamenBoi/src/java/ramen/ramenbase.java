@@ -11,4 +11,8 @@ package ramen;
  */
 public interface ramenbase {
     
+    public float getPrice();
+    public String getDescription();
+    public String setDescription();
+    public void addToppings();
 }
