@@ -20,7 +20,7 @@
         
         <div class="container">
             <header class="blog-header py-3 border-bottom border-dark">
-                <div class="text-center"><h1>Ramen Boi</h1></div>
+                <div class="text-center"><h1>Ramen <span class="boi">Boi</span></h1></div>
             </header>
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
