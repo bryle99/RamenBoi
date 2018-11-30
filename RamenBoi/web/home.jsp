@@ -5,16 +5,102 @@
 --%>
 
 <jsp:include page="headernav.jsp"/>
-
+<html>
+    <head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 50%;
+      height: 50%;
+      margin-right: auto;
+      margin-left: 25%;
+  }
+  
+  .carousel-caption{
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
+  </style>
+        <body>
         <div class="container">
             <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-                <div class="col-md-6 px-0">
-                  <h1 class="display-4 font-italic">Time for Ramen, BOI</h1>
-                  <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-                  <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-                </div>
+                     <div id="demo" class="carousel slide" data-ride="carousel">
+                         <ul class="carousel-indicators">
+                           <li data-target="#demo" data-slide-to="0" class="active"></li>
+                           <li data-target="#demo" data-slide-to="1"></li>
+                           <li data-target="#demo" data-slide-to="2"></li>
+                           <li data-target="#demo" data-slide-to="3"></li>
+                         </ul>
+                         <div class="carousel-inner">
+                           <div class="carousel-item active">
+                             <img src="assets/img/miso_ramen.jpg" alt="Miso" width="610" height="458">
+                             <div class="carousel-caption">
+                               <h3>Miso Ramen</h3>
+                               <p>It consists of Chinese-style wheat noodles served in a meat or (occasionally) fish-based broth, often flavored with soy sauce or miso.</p>
+                             </div>   
+                           </div>
+                           <div class="carousel-item">
+                             <img src="assets/img/shio_ramen.jpg" alt="Shio" width="610" height="458">
+                             <div class="carousel-caption">
+                               <h3>Shio Ramen</h3>
+                               <p>Shio means "salt" in Japanese, and indeed, the clear broth has an appealing sea-salt flavor.</p>
+                             </div>   
+                           </div>
+                           <div class="carousel-item">
+                             <img src="assets/img/shoyu_ramen.jpg" alt="Shoyu" width="610" height="458">
+                             <div class="carousel-caption">
+                                 <font color ="black"> <h3>Shoyu Ramen</h3></font>
+                               <p>Is a type of ramen that has very curly noodles and tangy, salty and savory, but light broth.</p>
+                             </div>   
+                           </div>
+                           <div class="carousel-item">
+                             <img src="assets/img/tonkotsu_ramen.jpg" alt="Tonkotsu" width="610" height="458">
+                             <div class="carousel-caption">
+                                 <h3>Tonkotsu Ramen</h3>
+                                 <p>The soup broth is prepared by boiling pork bones in water for a significant amount of time, up to eight hours, and the broth is typically cloudy in appearance.</p>
+                             </div>   
+                           </div>
+                         </div>
+                         <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                           <span class="carousel-control-prev-icon"></span>
+                         </a>
+                         <a class="carousel-control-next" href="#demo" data-slide="next">
+                           <span class="carousel-control-next-icon"></span>
+                         </a>
+                       </div>
+
+              </div>
             </div>
-        </div>
-      
-    </body>
+        </body>
 </html>
+
+<!--<script>
+$(document).ready(function(){
+    // Activate Carousel
+    $("#myCarousel").carousel();
+    
+    // Enable Carousel Indicators
+    $(".item1").click(function(){
+        $("#myCarousel").carousel(0);
+    });
+    $(".item2").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+    $(".item3").click(function(){
+        $("#myCarousel").carousel(2);
+    });
+    $(".item4").click(function(){
+        $("#myCarousel").carousel(3);
+    });
+    
+    // Enable Carousel Controls
+    $(".left").click(function(){
+        $("#myCarousel").carousel("prev");
+    });
+    $(".right").click(function(){
+        $("#myCarousel").carousel("next");
+    });
+});
+</script>
+-->
