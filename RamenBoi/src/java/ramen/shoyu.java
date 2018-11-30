@@ -9,9 +9,24 @@ package ramen;
  *
  * @author bryle
  */
-public class shoyu {
-    
-    public shoyu(){
-        this.setPrice(5);
+public class shoyu implements productBase{
+        
+    private float price;
+    private String desc;
+
+    public float getPrice() {
+        return price;
     }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }         
 }
