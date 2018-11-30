@@ -19,14 +19,51 @@
                             <option>Mandaue</option>   
                             <option>Liloan</option>
                             <option>Banilad</option>
-                        </select>
+                        </select><br>
                         
                         <select name="ramen">
                             <option>Tonkatsu Ramen</option>
                             <option>Shoyu Ramen</option>   
                             <option>Shio Ramen</option>
-                            
-                        </select>
+                        </select><br>
+                        
+                        <select name="garlic"> 
+                            <option>0</option>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select><br>
+                        
+                        <select name="scallions">
+                            <option>yes</option>
+                            <option>no</option>
+                        </select><br>
+                        
+                        <select name="spice">
+                            <option>No Spice</option>
+                            <option>Mild</option>
+                            <option>Medium</option>
+                            <option>Hot</option>
+                            <option>Very Hot</option>
+                        </select><br>
+                        
+                        <select name="richness">
+                            <option>Light</option>
+                            <option>Medium</option>
+                            <option>Rich</option>
+                            <option>Very Rich</option>
+                        </select><br>
+                        
+                        <select name="noodle-firmness">
+                            <option>Extra Soft</option>
+                            <option>Soft</option>
+                            <option>Medium</option>
+                            <option>Firm</option>
+                            <option>Extra Firm</option>
+                        </select><br>
+                        
+                        
+                        
                         <input type="submit" value="Choose"/>
                     </form>
             </div>
