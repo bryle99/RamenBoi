@@ -7,10 +7,13 @@ package ramen;
 
 /**
  *
- * @author Rafael
+ * @author bryle
  */
-public interface productBase {
-    public productBase(){
-        
+public class noodles extends ingredientsDecorator{
+    
+    private ramenBase ramen;
+    
+    public noodles(ramenBase ramen){
+        this.ramen = ramen;
     }
 }

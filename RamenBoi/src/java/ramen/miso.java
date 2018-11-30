@@ -9,9 +9,6 @@ package ramen;
  *
  * @author bryle
  */
-public class miso{
-    
-    public miso(){
-        this.setPrice(5);
-    }
+public class miso extends ramenBase{
+        
 }

@@ -9,9 +9,6 @@ package ramen;
  *
  * @author bryle
  */
-public class shoyu {
-    
-    public shoyu(){
-        this.setPrice(5);
-    }
+public class shoyu extends ramenBase{
+        
 }

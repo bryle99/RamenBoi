@@ -9,10 +9,6 @@ package ramen;
  *
  * @author bryle
  */
-public interface ramenbase {
+abstract class ingredientsDecorator extends ramenBase{
     
-    public float getPrice();
-    public String getDescription();
-    public String setDescription();
-    public void addToppings();
 }

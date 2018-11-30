@@ -9,9 +9,6 @@ package ramen;
  *
  * @author bryle
  */
-public class tonkotsu {
-    
-    public tonkotsu(){
-        this.setPrice(5);
-    }
+public class tonkotsu extends ramenBase{
+       
 }
