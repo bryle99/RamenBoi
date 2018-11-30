@@ -9,7 +9,7 @@ package ramen;
  *
  * @author bryle
  */
-public class shio extends ramenBase{
+public class shio {
     public shio(){
         this.setPrice(5);
     }

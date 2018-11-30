@@ -7,11 +7,10 @@ package ramen;
 
 /**
  *
- * @author bryle
+ * @author Rafael
  */
-public class tonkotsu {
-    
-    public tonkotsu(){
-        this.setPrice(5);
+public interface productBase {
+    public productBase(){
+        
     }
 }
