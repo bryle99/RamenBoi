@@ -10,9 +10,17 @@
 <style>
   /* Make the image fully responsive */
   .carousel-inner img {
-      width: 100%;
-      height: 100%;
+      width: 50%;
+      height: 50%;
+      margin-right: auto;
+      margin-left: 25%;
   }
+  
+  .carousel-caption{
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
   </style>
         <body>
         <div class="container">
@@ -26,31 +34,31 @@
                          </ul>
                          <div class="carousel-inner">
                            <div class="carousel-item active">
-                             <img src="assets/img/miso_ramen.jpg" alt="Miso" width="1100" height="500">
+                             <img src="assets/img/miso_ramen.jpg" alt="Miso" width="610" height="458">
                              <div class="carousel-caption">
-                               <h3>Miso</h3>
-                               <p></p>
+                               <h3>Miso Ramen</h3>
+                               <p>It consists of Chinese-style wheat noodles served in a meat or (occasionally) fish-based broth, often flavored with soy sauce or miso.</p>
                              </div>   
                            </div>
                            <div class="carousel-item">
-                             <img src="assets/img/shio_ramen.jpg" alt="Shio" width="1100" height="500">
+                             <img src="assets/img/shio_ramen.jpg" alt="Shio" width="610" height="458">
                              <div class="carousel-caption">
-                               <h3>Chicago</h3>
-                               <p>Thank you, Chicago!</p>
+                               <h3>Shio Ramen</h3>
+                               <p>Shio means "salt" in Japanese, and indeed, the clear broth has an appealing sea-salt flavor.</p>
                              </div>   
                            </div>
                            <div class="carousel-item">
-                             <img src="assets/img/shoyu_ramen.jpg" alt="Shoyu" width="1100" height="500">
+                             <img src="assets/img/shoyu_ramen.jpg" alt="Shoyu" width="610" height="458">
                              <div class="carousel-caption">
-                               <h3>New York</h3>
-                               <p>We love the Big Apple!</p>
+                                 <font color ="black"> <h3>Shoyu Ramen</h3></font>
+                               <p>Is a type of ramen that has very curly noodles and tangy, salty and savory, but light broth.</p>
                              </div>   
                            </div>
                            <div class="carousel-item">
-                             <img src="assets/img/tonkotsu_ramen.jpg" alt="Tonkotsu" width="1100" height="500">
+                             <img src="assets/img/tonkotsu_ramen.jpg" alt="Tonkotsu" width="610" height="458">
                              <div class="carousel-caption">
-                               <h3>Chicago</h3>
-                               <p>Thank you, Chicago!</p>
+                                 <h3>Tonkotsu Ramen</h3>
+                                 <p>The soup broth is prepared by boiling pork bones in water for a significant amount of time, up to eight hours, and the broth is typically cloudy in appearance.</p>
                              </div>   
                            </div>
                          </div>
@@ -67,7 +75,7 @@
         </body>
 </html>
 
-<script>
+<!--<script>
 $(document).ready(function(){
     // Activate Carousel
     $("#myCarousel").carousel();
@@ -95,3 +103,4 @@ $(document).ready(function(){
     });
 });
 </script>
+-->
