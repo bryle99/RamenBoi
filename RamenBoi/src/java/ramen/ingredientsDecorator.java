@@ -9,6 +9,6 @@ package ramen;
  *
  * @author bryle
  */
-public class shoyu extends ramenBase{
-        
+abstract class ingredientsDecorator extends ramenBase{
+    
 }

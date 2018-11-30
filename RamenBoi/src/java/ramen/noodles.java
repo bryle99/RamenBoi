@@ -7,12 +7,13 @@ package ramen;
 
 /**
  *
- * @author Rafael
+ * @author bryle
  */
-public interface productBase {
+public class noodles extends ingredientsDecorator{
     
-    public void setPrice(float price);
-    public float getPrice();
-    public void setDesc(String desc);
-    public String getDesc();
+    private ramenBase ramen;
+    
+    public noodles(ramenBase ramen){
+        this.ramen = ramen;
+    }
 }
