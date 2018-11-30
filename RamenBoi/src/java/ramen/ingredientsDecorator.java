@@ -7,12 +7,8 @@ package ramen;
 
 /**
  *
- * @author Rafael
+ * @author bryle
  */
-public interface productBase {
+abstract class ingredientsDecorator extends ramenBase{
     
-    public void setPrice(float price);
-    public float getPrice();
-    public void setDesc(String desc);
-    public String getDesc();
 }
