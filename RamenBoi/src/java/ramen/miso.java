@@ -10,8 +10,14 @@ package ramen;
  * @author bryle
  */
 public class miso{
-    
-    public miso(){
-        this.setPrice(5);
-    }
+        public void setPrice(){}
+        public float getPrice(){
+        return 0;
+        }
+        
+        public void setDesc(){}
+        
+        public String getDesc(){
+            return null;
+        }
 }
