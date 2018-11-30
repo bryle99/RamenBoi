@@ -10,7 +10,9 @@ package ramen;
  * @author Rafael
  */
 public interface productBase {
-    public productBase(){
-        
-    }
+    
+    public void setPrice();
+    public float getPrice();
+    public void setDesc();
+    public String getDesc();
 }
