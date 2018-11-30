@@ -5,16 +5,43 @@
 --%>
 
 <jsp:include page="headernav.jsp"/>
-
+<html>
+<style>
+.mySlides {display:none;}
+</style>
+        <body>
         <div class="container">
             <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-                <div class="col-md-6 px-0">
-                  <h1 class="display-4 font-italic">Time for Ramen, BOI</h1>
-                  <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-                  <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+                <div class="w3-content w3-display-container">
+                        <img class="mySlides" src="assets/img/miso_ramen.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/img/shoyu_ramen.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/img/shio_ramen.jpg" style="width:100%">
+                        <img class="mySlides" src="assets/img/tonkotsu_ramen.jpg" style="width:100%">
+
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                       </div>
+                   </div>
                 </div>
-            </div>
-        </div>
-      
-    </body>
+        </body>
 </html>
+
+<script>
+   var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
