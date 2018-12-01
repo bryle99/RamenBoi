@@ -18,7 +18,9 @@
         
         <title>Ramen Boi</title>
         <style>
-            
+            #headerImg{
+                margin-left: -4%;
+            }
         </style>
         <title>Order</title>
     </head>
@@ -30,7 +32,7 @@
                   <div class="col-4 pt-1">
                   
                   </div>
-                  <div class="col-4 text-center">
+                  <div class="col-4-md-4" id="headerImg">
                         <img id="ramenboi" src="assets/img/ramen-boy-logo.png">
                   </div>
                   <div class="col-4 d-flex justify-content-end align-items-center">
