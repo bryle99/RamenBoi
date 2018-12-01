@@ -19,14 +19,71 @@
                             <option>Mandaue</option>   
                             <option>Liloan</option>
                             <option>Banilad</option>
-                        </select>
+                        </select><br><br>
                         
                         <select name="ramen">
                             <option>Tonkatsu Ramen</option>
                             <option>Shoyu Ramen</option>   
                             <option>Shio Ramen</option>
-                            
-                        </select>
+                        </select><br><br>
+                        
+                        <select name="garlic"> 
+                            <option>0</option>
+                            <option>1/2</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select><br><br>
+                        
+                        <select name="scallions">
+                            <option>yes</option>
+                            <option>no</option>
+                        </select><br><br>
+                        
+                        <select name="spice">
+                            <option>No Spice</option>
+                            <option>Mild</option>
+                            <option>Medium</option>
+                            <option>Hot</option>
+                            <option>Very Hot</option>
+                        </select><br><br>
+                        
+                        <select name="richness">
+                            <option>Light</option>
+                            <option>Medium</option>
+                            <option>Rich</option>
+                            <option>Very Rich</option>
+                        </select><br><br>
+                        
+                        <select name="noodle-firmness">
+                            <option>Extra Soft</option>
+                            <option>Soft</option>
+                            <option>Medium</option>
+                            <option>Firm</option>
+                            <option>Extra Firm</option>
+                        </select><br><br>
+                        
+                        <label class="topping-checkbox">
+                            <input type="checkbox">Noodles
+                            <span class="checkmark"></span>
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox">Seaweed
+                            <span class="checkmark"></span>
+                        </label> 
+                        
+                        <label>
+                            <input type="checkbox">Moyashi
+                            <span class="checkmark"></span>
+                        </label> 
+                        
+                        <label>
+                            <input type="checkbox">Soft Boiled Egg
+                            <span class="checkmark"></span>
+                        </label> 
+                        <br><br>
+                        
+                        
                         <input type="submit" value="Choose"/>
                     </form>
             </div>
