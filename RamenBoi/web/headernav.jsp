@@ -1,4 +1,4 @@
-<%-- 
+x<%-- 
     Document   : headernav
     Created on : 11 24, 18, 4:44:21 AM
     Author     : bryle
@@ -15,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
+        
+        <title>Ramen Boi</title>
         <style>
             
         </style>
@@ -29,13 +31,13 @@
                   
                   </div>
                   <div class="col-4 text-center">
-                    <div class="text-center"> 
                         <img id="ramenboi" src="assets/img/ramen-boy-logo.png">
-                    </div>
                   </div>
                   <div class="col-4 d-flex justify-content-end align-items-center">
+                    <!--
                     <span class="oi oi-person"></span>
                     <a class="btn btn-sm btn-outline-secondary" href="#">   Sign up</a>
+                    -->
                   </div>
                 </div>
               </header>

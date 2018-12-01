@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<jsp:include page="headernav.jsp"/>
 <html>
     <head>
         <title>Log in</title>
@@ -17,20 +17,7 @@
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
     </head>
     <body>
-         <header class="blog-header py-3 border-bottom border-dark">
-                <div class="text-center"><h1>Ramen <span class="boi">Boi</span></h1></div>
-            </header>
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="order.jsp">Order</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-muted" href="#">Link</a>
-                </li>
-            </ul><br><br>
+        <!--
                 <div>
                     <form action="validate.jsp" method = "POST">
                         
@@ -40,5 +27,25 @@
                         
                     </form> 
                 </div>
+        -->
+        <div class="my-4 container text-center">
+            <form class="form-signin" action="validate.jsp" method = "POST">
+                <img class="" src="assets/img/ramen-boy-logo.png" alt="" width="320" height="150">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Password" required="">
+                
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+              </form>
+        </div>
     </body>
 </html>
