@@ -1,4 +1,4 @@
-x<%-- 
+ <%-- 
     Document   : headernav
     Created on : 11 24, 18, 4:44:21 AM
     Author     : bryle
@@ -42,7 +42,7 @@ x<%--
                 </div>
               </header>
             
-            <ul class="nav nav-pills nav-fill">
+            <ul class="nav nav-pills nav-fill mb-5">
                 <li class="nav-item">
                   <a class="link nav-link" href="home.jsp">Home</a>
                 </li>
@@ -50,7 +50,10 @@ x<%--
                   <a class="link nav-link" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
-                  <a class="link nav-link" href="#">Link</a>
+                  <a class="link nav-link" href="#">Branch</a>
+                </li>                
+                <li class="nav-item">
+                  <a class="link nav-link" href="#">Contact us</a>
                 </li>
             </ul>
         </div>
