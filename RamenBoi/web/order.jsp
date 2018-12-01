@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-8 col-md-offset-5">
                 <h1 id="headboi">Select a branch and Ramen </h1>
-                    <form name="f1" id="chooseboi" method="get" action="success.jsp">
+                    <form name="orderinfo" id="orderinfo" method="POST" action="success.jsp">
                         <select name="branch">
                             <option>Consolacion</option>
                             <option>Mandaue</option>   
@@ -62,6 +62,26 @@
                             <option>Extra Firm</option>
                         </select><br><br>
                         
+                        <label class="topping-checkbox">
+                            <input type="checkbox">Noodles
+                            <span class="checkmark"></span>
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox">Seaweed
+                            <span class="checkmark"></span>
+                        </label> 
+                        
+                        <label>
+                            <input type="checkbox">Moyashi
+                            <span class="checkmark"></span>
+                        </label> 
+                        
+                        <label>
+                            <input type="checkbox">Soft Boiled Egg
+                            <span class="checkmark"></span>
+                        </label> 
+                        <br><br>
                         <label class="topping-checkbox">
                             <input type="checkbox">Noodles
                             <span class="checkmark"></span>
