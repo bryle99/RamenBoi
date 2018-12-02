@@ -4,6 +4,8 @@
     Author     : Rafael
 --%>
 
+<%@page import="ramen.*"%>
+
 <jsp:include page="headernav.jsp"/>
         <div class="container">    
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
@@ -25,7 +27,15 @@
                             <option>Tonkatsu Ramen</option>
                             <option>Shoyu Ramen</option>   
                             <option>Shio Ramen</option>
+                            <option>Miso Ramen</option>
                         </select><br><br>
+                        <% 
+                            miso object1 = new miso();
+                            shio object2 = new shio();
+                            shoyu object3 = new shoyu();
+                            tonkotsu object4 = new tonkotsu();
+                                                        
+                            %>
                         
                         <select name="garlic"> 
                             <option>0</option>
@@ -33,19 +43,22 @@
                             <option>1</option>
                             <option>2</option>
                         </select><br><br>
-                        
+                        <%garlic object5 = new garlic();%>
+                            
                         <select name="scallions">
                             <option>yes</option>
                             <option>no</option>
                         </select><br><br>
+                        <%scallions object6 = new scallions();%>
                         
-                        <select name="spice">
+                        <select name="spiceness">
                             <option>No Spice</option>
                             <option>Mild</option>
                             <option>Medium</option>
                             <option>Hot</option>
                             <option>Very Hot</option>
                         </select><br><br>
+                         <%spiceness object7 = new spiceness();%>
                         
                         <select name="richness">
                             <option>Light</option>
@@ -53,6 +66,7 @@
                             <option>Rich</option>
                             <option>Very Rich</option>
                         </select><br><br>
+                         <%richness object8 = new richness();%>
                         
                         <select name="noodle-firmness">
                             <option>Extra Soft</option>
