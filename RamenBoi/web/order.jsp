@@ -15,19 +15,20 @@
             </div>
             <div class="col-md-8 col-md-offset-5">
                 <h1 id="headboi">Select a branch and Ramen </h1>
-                    <form name="orderinfo" id="orderinfo" method="POST" action="success.jsp">
+                    <form name="orderinfo" id="orderinfo" method="POST" action="order_success.jsp">
                         <select name="branch">
                             <option>Consolacion</option>
                             <option>Mandaue</option>   
                             <option>Liloan</option>
                             <option>Banilad</option>
                         </select><br><br>
+                        <a href="../src/java/ramen/garlic.java"></a>
                         
                         <select name="ramen">
-                            <option>Tonkatsu Ramen</option>
-                            <option>Shoyu Ramen</option>   
-                            <option>Shio Ramen</option>
-                            <option>Miso Ramen</option>
+                            <option><% tonkotsu t = new tonkotsu(); out.print(t.getDesc());%>></option>
+                            <option><% shoyu sh = new shoyu(); out.print(sh.getDesc());%></option>   
+                            <option><% shio s = new shio(); out.print(s.getDesc());%></option>
+                            <option><% miso m = new miso(); out.print(m.getDesc());%></option>
                         </select><br><br>
                         
                         <select name="garlic"> 

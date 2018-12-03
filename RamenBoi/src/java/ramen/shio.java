@@ -11,4 +11,7 @@ package ramen;
  */
 public class shio extends ramenBase{
         
+    public shio(){
+        this.setDescription("Shio Ramen");
+    }
 }

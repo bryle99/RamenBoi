@@ -10,5 +10,8 @@ package ramen;
  * @author bryle
  */
 public class shoyu extends ramenBase{
-        
+
+    public shoyu(){
+        this.setDescription("Shoyu Ramen");
+    }
 }
