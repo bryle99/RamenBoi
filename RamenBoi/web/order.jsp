@@ -7,9 +7,32 @@
 <%@page import="ramen.*"%>
 
 <jsp:include page="headernav.jsp"/>
+
         <div class="container">    
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-         
+        <h1 id="headboi">Select a branch</h1>
+        <form name="orderinfo" id="orderinfo" method="POST" action="step2.jsp">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="Cordova" value="Cordova" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                   Cordova
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="Mandaue" value="Mandaue">
+                <label class="form-check-label" for="exampleRadios2">
+                  Mandaue
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="branch" id="Consolacion" value="Consolacion">
+                <label class="form-check-label" for="exampleRadios3">
+                  Consolacion
+                </label>
+              </div>
+            <button class="btn btn-light" type="submit">Next</button>
+        </form>
+                      <!--
         <div class="row">
             <div class="col-md-6 col-md-offset-5">
             </div>
@@ -25,10 +48,10 @@
                         <a href="../src/java/ramen/garlic.java"></a>
                         
                         <select name="ramen">
-                            <option><% tonkotsu t = new tonkotsu(); out.print(t.getDesc());%>></option>
-                            <option><% shoyu sh = new shoyu(); out.print(sh.getDesc());%></option>   
-                            <option><% shio s = new shio(); out.print(s.getDesc());%></option>
-                            <option><% miso m = new miso(); out.print(m.getDesc());%></option>
+                            <option><% //tonkotsu t = new tonkotsu(); out.print(t.getDesc());%>></option>
+                            <option><% //shoyu sh = new shoyu(); out.print(sh.getDesc());%></option>   
+                            <option><% //shio s = new shio(); out.print(s.getDesc());%></option>
+                            <option><% // miso m = new miso(); out.print(m.getDesc());%></option>
                         </select><br><br>
                         
                         <select name="garlic"> 
@@ -107,14 +130,16 @@
                             <input type="checkbox">Soft Boiled Egg
                             <span class="checkmark"></span>
                         </label> 
-                        <br><br>
-                        
-                        
+                        <br><br>    
                         <input type="submit" value="Choose"/>
                     </form>
+                    
+                        
             </div>
         </div>
+        -->                
         </div>
-        </div>            
+        </div>
+  
     </body>
 </html>
