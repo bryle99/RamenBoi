@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 08:54 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Dec 05, 2018 at 03:49 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.1.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -84,10 +84,27 @@ CREATE TABLE `user` (
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `contact` bigint(11) NOT NULL,
-  `type` enum('customer','restaurant','admin','') NOT NULL
+  `type` enum('customer','staff','admin','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `username`, `password`, `contact`, `type`) VALUES
+(1, 'John', 'Del Mar', 'jdelmar', 'jdelmar', 995934930, 'admin'),
+(2, 'Bryle', 'Baran', 'bbaran', 'bbaran', 320598, 'admin'),
+(3, 'Rafael James', 'Ompad', 'rjompad', 'rjompad', 9532532, 'admin'),
+(4, 'Valerie ', 'Torres', 'Vtorres', 'Vtorres', 5395235, 'customer'),
+(5, 'Marsha', 'Becker', 'Mbecker', 'Mbecker', 5329085, 'customer'),
+(6, 'Juana', 'Reese', 'Jreese', 'Jreese', 3525, 'customer'),
+(7, 'Loretta', 'Salazar', 'Lsalazar', 'Lsalazar', 5236234, 'customer'),
+(8, 'Boyd', 'Patton', 'Bpatton', 'Bpatton', 52364362, 'customer'),
+(9, 'Sabrina', 'Nguyen', 'Snguyen', 'Snguyen', 35256346, 'customer'),
+(10, 'Clayton', 'Hubbard', 'Chubbard', 'Chubbard', 3768769, 'staff'),
+(11, 'Jamie', 'Mann', 'Jmann', 'Jmann', 353467457, 'staff');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +177,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

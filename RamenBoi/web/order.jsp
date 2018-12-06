@@ -91,28 +91,28 @@
                             <option>Extra Firm</option>
                         </select><br><br>
                         
-                        <label class="topping-checkbox">
+                        <label class="topping-checkbox" name = "noodles">
                             <input type="checkbox">Noodles
                             <span class="checkmark"></span>
                         </label>
                         
                         <label>
-                            <input type="checkbox">Seaweed
+                            <input type="checkbox" name = "seaweed">Seaweed
                             <span class="checkmark"></span>
                         </label> 
                         
                         <label>
-                            <input type="checkbox">Moyashi
+                            <input type="checkbox" name = "moyashi">Moyashi
                             <span class="checkmark"></span>
                         </label> 
                         
                         <label>
-                            <input type="checkbox">Soft Boiled Egg
+                            <input type="checkbox" name = "egg">Soft Boiled Egg
                             <span class="checkmark"></span>
                         </label> 
                         <br><br>
-                        <label class="topping-checkbox">
-                            <input type="checkbox">Noodles
+                        <label class="topping-checkbox" name = "chashu">
+                            <input type="checkbox">Cha Shu
                             <span class="checkmark"></span>
                         </label>
                         
