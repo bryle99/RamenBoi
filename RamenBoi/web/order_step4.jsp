@@ -4,6 +4,8 @@
     Author     : wabzs
 --%>
 
+<%@page import="ramen.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ramen.*"%>
 <jsp:include page="headernav.jsp"/>
@@ -32,8 +34,8 @@
                             <span class="checkmark"></span>
                         </label> 
                         <br><br>
-                <a href="step3.jsp" class="btn btn-light" role="button">Back</a>
-                <button class="btn btn-light" type="submit">Next</button>        
+                <a href="order_step3.jsp" class="btn btn-light m-1" role="button">Back</a>
+                <button class="btn btn-light m-1" type="submit">Next</button>        
             </form>          
         </div>
         </div>

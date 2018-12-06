@@ -4,14 +4,57 @@
     Author     : wabzs
 --%>
 
+<%@page import="ramen.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ramen.*"%>
-<jsp:include page="headernav.jsp"/>
+<jsp:include page="headernav.jsp"/>       
+        <% 
+            String ramenbase = "";
+            ramenBase ramen = null;
+            
+            if (true) {
+                out.print("topkek");
+                ramenbase = request.getParameter("ramenbase");
+                if(ramenbase.equals("tonkotsu")){
+                    ramen = new tonkotsu();
+                }else if(ramenbase.equals("shoyu")){
+                    ramen = new shoyu();
+                }else if(ramenbase.equals("shio")){
+                    ramen = new shio();
+                }else if(ramenbase.equals("miso")){
+                    ramen = new miso();
+                }
+                session.setAttribute("ramen", ramen);
+            }
+            
+            ramen = session.getAttribute("ramen").getClass();
+            
+            /*
+            switch(ramenbase){
+                case "tonkotsu":  ramen = new tonkotsu();
+                        break;
+                case "shoyu":  ramen = new shoyu();
+                        break;  
+                case "shio":  ramen = new shio();
+                        break;
+                case "miso":  ramen = new miso();
+                        break;        
+            }*/
+            
+        %>
 
         <div class="container">    
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-            <h1 id="headboi">Ramen Preference</h1>
-            <form name="orderinfo" id="orderinfo" method="POST" action="step4.jsp">
+            <h1 id="headboi">Ramen Preference : : 
+            <% if(ramen != null){ 
+                        out.print(ramen.getDescription()); 
+                }else{ 
+                        out.print("ramen is null");
+                }
+            %>
+            </h1>
+            <form name="orderinfo" id="orderinfo" method="POST" action="order_step4.jsp">
                 <h4>Garlic Cloves</h4>
                         <select name="garlic"> 
                             <option>0</option>
@@ -47,8 +90,8 @@
                             <option>Firm</option>
                             <option>Extra Firm</option>
                         </select><br><br> 
-                <a href="step2.jsp" class="btn btn-light" role="button">Back</a>
-                <button class="btn btn-light" type="submit">Next</button>        
+                <a href="order_step2.jsp" class="btn btn-light m-1" role="button">Back</a>
+                <button class="btn btn-light m-1" type="submit">Next</button>        
             </form>          
         </div>
         </div>

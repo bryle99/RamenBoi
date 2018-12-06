@@ -11,7 +11,7 @@
         <div class="container">    
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <h1 id="headboi">Select a branch</h1>
-        <form name="orderinfo" id="orderinfo" method="POST" action="step2.jsp">
+        <form name="orderinfo" id="orderinfo" method="POST" action="order_step2.jsp">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="branch" id="Cordova" value="Cordova" checked>
                 <label class="form-check-label" for="exampleRadios1">
@@ -30,7 +30,7 @@
                   Consolacion
                 </label>
               </div>
-            <button class="btn btn-light" type="submit">Next</button>
+            <button class="btn btn-light m-2" type="submit">Next</button>
         </form>
                       <!--
         <div class="row">

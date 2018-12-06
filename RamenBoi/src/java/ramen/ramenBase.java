@@ -18,7 +18,7 @@ enum Firmness{
         ExtraSoft, Soft, Medium, Firm, ExtraFirm;
 }
 
-abstract class ramenBase {
+public class ramenBase {
     
     
     
@@ -27,7 +27,7 @@ abstract class ramenBase {
     int garlic;
     boolean scallions;
     Richness richness;
-    Firmness firmness;
+    Firmness firmness;  
 
     public boolean isScallions() {
         return scallions;
@@ -61,7 +61,7 @@ abstract class ramenBase {
         this.price = price;
     }
 
-    public String getDesc() {
+    public String getDescription() {
         return description; 
     }    
     
