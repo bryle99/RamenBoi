@@ -66,3 +66,14 @@ body{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+  
+  .carousel-caption{
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
+  .carousel-caption{
+      background:rgba(0,0,0,0.5);
+  }
+  

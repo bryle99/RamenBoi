@@ -24,17 +24,7 @@
                 margin-left: -4%;
             }
               /* Make the image fully responsive */
-  .carousel-inner img {
-      width: 50%;
-      height: 50%;
-      margin-right: auto;
-      margin-left: 25%;
-  }
-  
-  .carousel-caption{
-      margin-right: auto;
-      margin-left: auto;
-  }
+
   
         </style>
         <title>Order</title>
