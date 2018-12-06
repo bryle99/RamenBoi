@@ -3,24 +3,24 @@
     Created on : 11 24, 18, 1:10:38 AM
     Author     : Rafael
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="ramen.*"%>
- 
-<!DOCTYPE html>
-request.getParameter("branch");
-
-request.getParameter("ramen");
-<% 
-                            miso object1 = new miso();
-                            shio object2 = new shio();
-                            shoyu object3 = new shoyu();
-                            tonkotsu object4 = new tonkotsu();
-                            garlic object5 = new garlic(); 
-                            scallions object6 = new scallions();
-                            spiceness object7 = new spiceness();
-                            richness object8 = new richness();
-                            firmness object9 = new firmness();
-                            
-                                
+<a href="order.jsp"></a>
+<%@ page import ="java.sql.*" %>
+<%
+    try{
+        String[] toppings;
+        Class.forName("com.mysql.jdbc.Driver");
+        toppings = new String[20];
+        String branch = request.getParameter("branch");   
+        String base = request.getParameter("base");
+        String garlic = request.getParameter("garlic");
+        String scallions = request.getParameter("scallions");
+        String spiceness = request.getParameter("spiceness");
+        String richness = request.getParameter("richness");
+        String noodleFirmness = request.getParameter("noodle-firmness");
+        
+        
+   }
+   catch(Exception e){       
+       out.println("Something went wrong !! Please try again");       
+   }      
 %>
