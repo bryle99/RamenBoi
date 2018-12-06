@@ -8,20 +8,7 @@
 <html>
     <head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-      width: 50%;
-      height: 50%;
-      margin-right: auto;
-      margin-left: 25%;
-  }
-  
-  .carousel-caption{
-      margin-right: auto;
-      margin-left: auto;
-  }
-  
-  </style>
+</style>
         <body>
         <div class="container">
             <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
@@ -33,11 +20,11 @@
                            <li data-target="#demo" data-slide-to="3"></li>
                          </ul>
                          <div class="carousel-inner">
-                           <div class="carousel-item active"  width="610" height="458">
-                             <img src="assets/img/miso_ramen.jpg" alt="Miso">
+                             <div class="carousel-item active"  width="610" height="458"></a>
+                               <img src="assets/img/miso_ramen.jpg" alt="Miso" style="margin-right: 30em;">
                              <div class="carousel-caption">
                                <h3>Miso Ramen</h3>
-                               <p>It consists of Chinese-style wheat noodles served in a meat or (occasionally) fish-based broth, often flavored with soy sauce or miso.</p>
+                               <p></p>
                              </div>   
                            </div>
                            <div class="carousel-item" width="610" height="458">
@@ -75,6 +62,11 @@
         </body>
 </html>
 
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
 <!--<script>
 $(document).ready(function(){
     // Activate Carousel

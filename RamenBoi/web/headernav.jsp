@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
@@ -22,6 +23,19 @@
             #headerImg{
                 margin-left: -4%;
             }
+              /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 50%;
+      height: 50%;
+      margin-right: auto;
+      margin-left: 25%;
+  }
+  
+  .carousel-caption{
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
         </style>
         <title>Order</title>
     </head>
