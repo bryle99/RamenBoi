@@ -15,5 +15,6 @@ public class noodles extends ingredientsDecorator{
     
     public noodles(ramenBase ramen){
         this.ramen = ramen;
+        this.setPrice(80);
     }
 }

@@ -15,5 +15,6 @@ public class seaweed extends ingredientsDecorator{
     
     public seaweed(ramenBase ramen){
         this.ramen = ramen;
+        this.setPrice(20);
     }
 }

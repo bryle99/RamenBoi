@@ -13,5 +13,7 @@ public class miso extends ramenBase{
         
     public miso(){
         this.setDescription("Miso Ramen");
+        this.setPrice(220);
     }
+    
 }

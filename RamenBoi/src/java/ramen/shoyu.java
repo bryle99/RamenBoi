@@ -13,5 +13,6 @@ public class shoyu extends ramenBase{
 
     public shoyu(){
         this.setDescription("Shoyu Ramen");
+        this.setPrice(270);
     }
 }

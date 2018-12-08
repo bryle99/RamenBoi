@@ -13,5 +13,6 @@ public class tonkotsu extends ramenBase{
        
     public tonkotsu(){
         this.setDescription("Tonkotsu Ramen");
+        this.setPrice(299);
     }
 }
