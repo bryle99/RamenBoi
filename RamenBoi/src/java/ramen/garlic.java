@@ -10,5 +10,5 @@ package ramen;
  * @author Rafael
  */
 public class garlic extends ramenBase{
-    
+ 
 }
