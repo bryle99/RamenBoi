@@ -10,9 +10,7 @@ package ramen;
  * @author Rafael
  */
 public class egg extends ingredientsDecorator{
-    
-    private ramenBase ramen;
-    
+
     public egg(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(30);

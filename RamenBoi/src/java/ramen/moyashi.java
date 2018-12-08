@@ -11,8 +11,6 @@ package ramen;
  */
 public class moyashi extends ingredientsDecorator{
     
-    private ramenBase ramen;
-    
     public moyashi(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(40);

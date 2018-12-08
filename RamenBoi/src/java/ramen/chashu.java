@@ -11,9 +11,8 @@ package ramen;
  */
 public class chashu extends ingredientsDecorator{
     
-    private ramenBase ramen;
-    
     public chashu(ramenBase ramen){
         this.ramen = ramen;
+        this.setPrice(70);
     }
 }

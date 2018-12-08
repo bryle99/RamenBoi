@@ -127,16 +127,16 @@
                             <h1>Add Toppings</h1>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" name= "topping" value="Noodles">Noodles 
+                                        <input type="checkbox" class="form-check-input" name= "topping" value="noodles">Noodles 
                                     </label>
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="Seaweed">Seaweed 
+                                        <input type="checkbox" class="form-check-input" name="topping" value="seaweed">Seaweed 
                                     </label>
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="Moyashi">Moyashi 
+                                        <input type="checkbox" class="form-check-input" name="topping" value="moyashi">Moyashi 
                                     </label>
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="Soft Boiled Egg">Soft Boiled Egg 
+                                        <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
                                     </label>
                                 </div><br>
                             <button class="btn btn-light m-1" type="submit">Check Out</button>   

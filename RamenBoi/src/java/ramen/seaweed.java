@@ -11,8 +11,6 @@ package ramen;
  */
 public class seaweed extends ingredientsDecorator{
     
-    private ramenBase ramen;
-    
     public seaweed(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(20);

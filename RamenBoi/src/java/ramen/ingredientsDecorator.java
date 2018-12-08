@@ -11,4 +11,11 @@ package ramen;
  */
 abstract class ingredientsDecorator extends ramenBase{
     
+    int quantity = 1;
+    ramenBase ramen;
+    
+    public float getTotalCost(){
+        return ramen.getPrice() + (this.getPrice() * quantity);
+    }
+    
 }
