@@ -12,7 +12,7 @@
         <% 
             String ramenbase = "";
             ramenBase ramen = null;
-            
+            /*
             if (true) {
                 out.print("topkek");
                 ramenbase = request.getParameter("ramenbase");
@@ -28,9 +28,9 @@
                 session.setAttribute("ramen", ramen);
             }
             
-            ramen = session.getAttribute("ramen").getClass();
+            //ramen = session.getAttribute("ramen").getClass();
             
-            /*
+            
             switch(ramenbase){
                 case "tonkotsu":  ramen = new tonkotsu();
                         break;

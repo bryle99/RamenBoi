@@ -54,7 +54,7 @@
                   <a class="link nav-link" href="home.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="link nav-link" href="order.jsp">Order</a>
+                  <a class="link nav-link" href="order_1.jsp">Order</a>
                 </li>
                 <li class="nav-item">
                   <a class="link nav-link" href="#">Branch</a>
