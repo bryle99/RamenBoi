@@ -5,6 +5,8 @@
  */
 package ramen;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Rafael
@@ -20,14 +22,26 @@ enum Firmness{
 
 public class ramenBase {
     
-    
-    
+    ArrayList<ingredientsDecorator> toppings;
     float price;
     String description;
     int garlic;
     boolean scallions;
     Richness richness;
-    Firmness firmness;  
+    Firmness firmness;
+    boolean isToppings;
+
+    public void addToppings(ingredientsDecorator topping){           
+        if(toppings == null){
+            toppings = new ArrayList<ingredientsDecorator>(); 
+        }
+        toppings.add(topping);
+        this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());       
+    }
+    
+    public void setToppings(boolean x) {
+        this.isToppings = x;
+    }
 
     public boolean isScallions() {
         return scallions;
