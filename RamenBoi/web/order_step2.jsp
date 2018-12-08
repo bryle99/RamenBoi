@@ -12,6 +12,7 @@
                 session.setAttribute("branch", request.getParameter("branch"));
             }
             session.setAttribute("branch", request.getParameter("branch"));
+            
             out.print(session.getAttribute("branch"));
         %>
 
