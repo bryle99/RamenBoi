@@ -9,51 +9,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+         
          <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
-        <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
+         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <style>
-                        /* The Modal (background) */
-            .modal {
-              display: none; /* Hidden by default */
-              position: fixed; /* Stay in place */
-              z-index: 1; /* Sit on top */
-              left: 0;
-              top: 0;
-              width: 100%; /* Full width */
-              height: 100%; /* Full height */
-              overflow: auto; /* Enable scroll if needed */
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            }
-
-            /* Modal Content/Box */
-            .modal-content {
-              background-color: #fefefe;
-              margin: 15% auto; /* 15% from the top and centered */
-              padding: 20px;
-              border: 1px solid #888;
-              width: 80%; /* Could be more or less, depending on screen size */
-            }
-
-            /* The Close Button */
-            .close {
-              color: #aaa;
-              float: right;
-              font-size: 28px;
-              font-weight: bold;
-            }
-
-            .close:hover,
-            .close:focus {
-              color: black;
-              text-decoration: none;
-              cursor: pointer;
-            }
+            
             table.usertable {
                 margin-left:auto; 
                 margin-right:auto;
@@ -91,9 +55,15 @@
                 background-color: #f4bc42;
                 color: white;
             }
+            #adminoptions{
+                margin-left: 12.5%;
+            }
         </style>
     </head>
     <body>
+        <div id="adminoptions">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
+        </div>
        
         <h1 class="text-center tableheader">Admin List</h1>
         <table class="usertable">
@@ -105,8 +75,7 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
-<!--    <th></th>
-    <th></th>-->
+
     </tr>
     </thead>
     <tbody>
@@ -129,8 +98,7 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-<!--     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onClick='setInactive(this.id)'>X</button></td>-->
+
     
 </tr>
     
@@ -153,9 +121,7 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
-<!--    <th></th>
-    <th></th>
-    <th></th>-->
+
     </tr>
     </thead>
     <tbody>
@@ -178,9 +144,6 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-<!--    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Admin</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onclick="setInactive(this.id)">X</button></td>-->
     
 </tr>
     
@@ -203,9 +166,6 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
-<!--    <th></th>
-    <th></th>
-    <th></th>-->
     </tr>
     </thead>
     <tbody>
@@ -228,9 +188,6 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-<!--    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Staff</button></td>
-    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger">X</button></td>-->
     
 </tr>
     
@@ -244,70 +201,42 @@
 </table>
 <hr>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Set Type</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-<!--    <form  onsubmit="return confirm('Do you really want to submit the form?');" action="setType.jsp" >
-        <label for="id"> User ID: </label>
-        <input  type='text' name="id" class="form-control">
-        <label for="type"> Choose New User Type: </label>
-        <select name='type' class="form-control">
-            <option>Admin</option>
-            <option>Staff</option>
-            <option>Customer</option>
-        </select>
-        <input type="submit">
-    </form>-->
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-  <!-- Modal content -->
-  <div class="modal-content">
-            
-  </div>
 
+<div id="changeTypeModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+            <form  onsubmit="return confirm('Do you really want to submit the form?');" action="setType.jsp" >
+                <label for="id"> User ID: </label>
+                <input  type='text' name="id" class="form-control">
+                <label for="type"> Choose New User Type: </label>
+                <select name='type' class="form-control">
+                    <option></option>
+                    <option>Admin</option>
+                    <option>Staff</option>
+                    <option>Customer</option>
+                </select>
+                <br><br>
+                <input type="submit" class="btn btn-success">
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
-    </body>
+
+</body>
 </html>
 <script>
-    $(document).ready(function(){
-                var modal = document.getElementById('myModal');
 
-                var btn = document.getElementById("myBtn");
-
-                var span = document.getElementsByClassName("close")[0];
-
-                btn.onclick = function() {
-                  modal.style.display = "block";
-                }
-
-                span.onclick = function() {
-                  modal.style.display = "none";
-                }
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                  if (event.target == modal) {
-                    modal.style.display = "none";
-                  }
-                }
-        });
-    
           
 </script>
 
