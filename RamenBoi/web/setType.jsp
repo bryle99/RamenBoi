@@ -11,6 +11,7 @@
         pst.setString(1, type);
         pst.setString(2, id);
         pst.execute();
-        
-
+        String site = new String("http://localhost:8080/RamenBoi/AdminUserList.jsp");
+        response.setStatus(response.SC_MOVED_TEMPORARILY);
+        response.setHeader("Location", site); 
 %>

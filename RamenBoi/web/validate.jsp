@@ -12,19 +12,30 @@
         String password = request.getParameter("pass");
       
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement pst = conn.prepareStatement("Select email,password from user where email=? and password=?");
+        PreparedStatement pst = conn.prepareStatement("Select email,password,type,first_name,last_name from user where email=? and password=?");
         pst.setString(1, email);
         pst.setString(2, password);
         ResultSet rs = pst.executeQuery();                        
-        if(rs.next()){           
+        if(rs.next()){   
+            
+            String type = rs.getString("type");
+            String userFname = rs.getString("first_name");
+            session.setAttribute("userType",type);
+            session.setAttribute("userFname", userFname);
+            
             String site = new String("http://localhost:8080/RamenBoi/home.jsp");
             response.setStatus(response.SC_MOVED_TEMPORARILY);
             response.setHeader("Location", site); 
+            
+            
         }else{
-           String site = new String("http://localhost:8080/RamenBoi/login.jsp");
+            session.setAttribute("invalidLogin",1); 
+            
+            
+            String site = new String("http://localhost:8080/RamenBoi/login.jsp");
             response.setStatus(response.SC_MOVED_TEMPORARILY);
             response.setHeader("Location", site); 
-   }
+        }
     }
    catch(Exception e){       
        out.println("Something went wrong !! Please try again");       

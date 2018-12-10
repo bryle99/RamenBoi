@@ -23,14 +23,69 @@
             #headerImg{
                 margin-left: -4%;
             }
-              /* Make the image fully responsive */
+            
+            #tophr{
+                margin-top: 2em;
+            }
+            
+            #dropdownmenu{
+                margin-left: 74%;
+            }
+            
+            .dropbtn {
+                background-color: #C7B581;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {background-color: #ddd;}
+
+            .dropdown:hover .dropdown-content {display: block;}
+
+            .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
   
         </style>
         <title>Order</title>
     </head>
     <body>
-        
+        <hr id="tophr">
+        <div class="dropdown" id="dropdownmenu">
+            <button class="dropbtn">Hello, <% out.println(session.getAttribute("userFname")); %></button>
+            <div class="dropdown-content">
+              <%
+                  if(session.getAttribute("userType").equals("admin")){
+                      out.println("<a href='AdminUserList.jsp'>User List</a>");
+                  }
+              %>
+              <a href="login.jsp">Log Out</a>
+              
+              
+            </div>
+        </div>
         <div class="container">
             <header class="blog-header py-3 border-bottom border-dark">
                 <div class="row flex-nowrap justify-content-between align-items-center">

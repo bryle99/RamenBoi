@@ -16,17 +16,6 @@
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <!--
-                <div>
-                    <form action="validate.jsp" method = "POST">
-                        
-                        Username : <input type = "text" name = "user" placeholder = "DEEZ NUTS"><br>
-                        Password : <input type ="text" name ="pass" placeholder = "LMAO GOT EM"><br>
-                        <input type ="submit" >
-                        
-                    </form> 
-                </div>
-        -->
         <div class="my-4 container text-center">
             <form class="form-signin" action="validate.jsp" method = "POST">
                 <img class="" src="assets/img/ramen-boy-logo.png" alt="" width="320" height="150">
@@ -48,3 +37,11 @@
         </div>
     </body>
 </html>
+<script>
+    <%
+        if(session.getAttribute("invalidLogin") != null && session.getAttribute("invalidLogin").equals(1)){
+            out.println("alert('Invalid E-mail / Password')");
+        }
+    %>
+    
+</script>

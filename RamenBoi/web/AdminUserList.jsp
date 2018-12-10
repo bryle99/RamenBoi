@@ -9,6 +9,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
+        <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
+        <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
                         /* The Modal (background) */
@@ -63,34 +69,34 @@
                 border-width: 1px;
             } 
             .usertable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  text-align: center;
-  width: 75%;
-}
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                text-align: center;
+                width: 75%;
+            }
 
-.usertable td, .usertable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+              .usertable td, .usertable th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
 
-.usertable tr:nth-child(even){background-color: #f2f2f2;}
+              .usertable tr:nth-child(even){background-color: #f2f2f2;}
 
-.usertable tr:hover {background-color: #ddd;}
+              .usertable tr:hover {background-color: #ddd;}
 
-.usertable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #f4bc42;
-  color: white;
-}
+              .usertable th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #f4bc42;
+                color: white;
+            }
         </style>
     </head>
     <body>
        
         <h1 class="text-center tableheader">Admin List</h1>
-<table class="usertable">
+        <table class="usertable">
     <thead>
     <tr>
     <th>ID</th>
@@ -99,8 +105,8 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
-    <th></th>
-    <th></th>
+<!--    <th></th>
+    <th></th>-->
     </tr>
     </thead>
     <tbody>
@@ -123,8 +129,8 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onClick='setInactive(this.id)'>X</button></td>
+<!--     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
+     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onClick='setInactive(this.id)'>X</button></td>-->
     
 </tr>
     
@@ -147,9 +153,9 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
+<!--    <th></th>
     <th></th>
-    <th></th>
-    <th></th>
+    <th></th>-->
     </tr>
     </thead>
     <tbody>
@@ -172,9 +178,9 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Admin</button></td>
+<!--    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Admin</button></td>
      <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onclick="setInactive(this.id)">X</button></td>
+     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger" onclick="setInactive(this.id)">X</button></td>-->
     
 </tr>
     
@@ -197,9 +203,9 @@
     <th>Username</th>
     <th>Password</th>
     <th>Contact</th>
+<!--    <th></th>
     <th></th>
-    <th></th>
-    <th></th>
+    <th></th>-->
     </tr>
     </thead>
     <tbody>
@@ -222,9 +228,9 @@
     <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
     <td><%=rs.getString("contact")%></td>
-    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Staff</button></td>
+<!--    <td><button id="<%=rs.getString("user_id")%>" class="btn btn-primary">Make Staff</button></td>
     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-info">Make Customer</button></td>
-     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger">X</button></td>
+     <td><button id="<%=rs.getString("user_id")%>" class="btn btn-danger">X</button></td>-->
     
 </tr>
     
@@ -243,15 +249,33 @@
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-    <form  onsubmit="return confirm('Do you really want to submit the form?');" action="setType.jsp">
-        <input  type='text' name="id">
-        <select name='type'>
+<!--    <form  onsubmit="return confirm('Do you really want to submit the form?');" action="setType.jsp" >
+        <label for="id"> User ID: </label>
+        <input  type='text' name="id" class="form-control">
+        <label for="type"> Choose New User Type: </label>
+        <select name='type' class="form-control">
             <option>Admin</option>
             <option>Staff</option>
             <option>Customer</option>
         </select>
         <input type="submit">
-    </form>
+    </form>-->
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
   <!-- Modal content -->
   <div class="modal-content">
             
