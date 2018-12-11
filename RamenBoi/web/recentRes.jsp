@@ -12,8 +12,8 @@
     <head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
     <style>
             
-            table.usertable {
-                margin-left:auto; 
+          table.usertable {
+                margin-left:auto;
                 margin-right:auto;
             }
             
@@ -26,11 +26,12 @@
                 border-style: inset;
                 border-width: 1px;
             } 
+            
             .usertable {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
                 border-collapse: collapse;
                 text-align: center;
-                width: 75%;
+                width: 92%;
             }
 
               .usertable td, .usertable th {
@@ -79,7 +80,7 @@
        
       
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement j = conn.prepareStatement("Select * from reservation where isPickedUp = '0' ORDER BY reservation_dateTime ASC LIMIT 10");
+        PreparedStatement j = conn.prepareStatement("Select * from reservation where isPickedUp = '1' ORDER BY pickUp_dateTime ASC LIMIT 10");
         ResultSet res = j.executeQuery();  
       
         while(res.next()){
@@ -94,7 +95,7 @@
     <td><%=res.getString("ramen_toppings")%></td>
     <td><%=res.getString("total_price")%></td>
     <td><%=res.getString("isPickedUp")%></td>
-    <td><%=res.getInt("pickUp_dateTime")%></td>
+    <td><%=res.getString("pickUp_dateTime")%></td>
     
 </tr>
     
