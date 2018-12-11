@@ -8,17 +8,18 @@
 
 <jsp:include page="headernav.jsp"/>
 <%@ page import ="java.sql.*" %>
+            
+            <!--Start of Multistep Form-->
+            <div class="container">
+                <div class="jumbotron p-3 p-md-4 text-white rounded bg-dark">
+                <form id="regForm" name="orderinfo" id="orderinfo" method="POST" action="checkout.jsp">
+                    
 
-        <div class="container">
-            <div class="jumbotron p-2 p-md-4 text-white rounded bg-dark">
-
-<!--                     <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false"> -->                      
-                         <form name="orderinfo" id="orderinfo" method="POST" action="checkout.jsp">  
-
-<!--                        <div class="carousel-inner"> <!-- Start of carousel container -->
-<!--                           <div class="carousel-item active"> <!-- Start of carousel item 1 -->
-                             <h1>Choose a Branch</h1>
-                             <div class="form-check">
+                    <!-- One "tab" for each step in the form: -->
+                    <div class="tab">
+                       <h1>Choose a Branch</h1>
+                       <div class="form-check">
+                           
                                  <%
                                      try{
                                         Class.forName("com.mysql.jdbc.Driver"); 
@@ -47,12 +48,12 @@
                                     }
                                      
                                  %>
-                             </div>
- <!--                         </div> <!-- End of carousel item 1 -->
-                            
- <!--                       <div class="carousel-item"> -->
-                             <h1>Choose a Ramen Base</h1>
-                             <div>
+                        </div>
+                    </div>
+
+                    <div class="tab">
+                        <h1>Choose a Ramen Base</h1>
+                        <div>
                                 <div class="form-check">
                                    <input class="form-check-input" type="radio" name="ramenBase" id="tonkotsu" value="tonkotsu" checked>
                                        <label class="form-check-label" for="tonkotsu">
@@ -75,11 +76,11 @@
                                        </label>
                                 </div>
                              </div>
- <!--                         </div>     <!-- End of carousel item -->
-                           
- <!--                       <div class="carousel-item">-->
-                             <h1>Ramen Preference</h1>
-                            <div class="row mb-2">
+                    </div>
+
+                    <div class="tab">
+                        <h1>Ramen Preference</h1>
+                         <div class="row mb-2">
                                 <div class="col-md-2">
                                     <h4>Garlic</h4>    
                                        <select name="garlic"> 
@@ -134,13 +135,11 @@
                                         </select>
                                </div>
                             </div>
-  <!--                         </div><!-- End of carousel item -->
-                        
-                        
-                        
-  <!--                         <div class="carousel-item">  -->
-                            <h1>Add Toppings</h1>
-                                <div class="form-check-inline">
+                    </div>
+
+                    <div class="tab">
+                      <h1>Add Toppings</h1>  
+                      <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="number" name="noodleqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name= "topping" value="noodles">Noodles 
@@ -157,25 +156,26 @@
                                         <input type="number" name="eggqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
                                     </label>
-                                </div><br>
-                         <button class="btn btnramen m-1" type="submit">Check Out</button>   
- <!--                         </div> <!-- End of carousel item -->
-                        
- <!--                         <a class="carousel-control-next" href="#demo" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>   
-                       
-  <!--                      </div> <!-- End of carousel container -->
-                    
-                         </form> 
-                         
-           
-<!--                      </div> 
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <h2><b><span class="btnramen"><</span></b></h2>
-                    </a>
--->                                  
-              </div>
+                        </div><br>
+                    </div>
+
+                    <div style="overflow:auto;">
+                      <div style="float:right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btnramen">Previous</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btnramen">Next</button>
+                      </div>
+                    </div>
+
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:40px;">
+                      <span class="step"></span>
+                      <span class="step"></span>
+                      <span class="step"></span>
+                      <span class="step"></span>
+                    </div>
+
+                </form>
+                </div>
             </div>
         </body>
 </html>
@@ -184,5 +184,56 @@
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover();
     });
+    
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+      // This function will display the specified tab of the form ...
+      var x = document.getElementsByClassName("tab");
+      x[n].style.display = "block";
+      // ... and fix the Previous/Next buttons:
+      if (n == 0) {
+        document.getElementById("prevBtn").style.display = "none";
+      } else {
+        document.getElementById("prevBtn").style.display = "inline";
+      }
+      if (n == (x.length - 1)) {
+        document.getElementById("nextBtn").innerHTML = "Proceed to Confirmation";
+      } else {
+        document.getElementById("nextBtn").innerHTML = "Next";
+      }
+      // ... and run a function that displays the correct step indicator:
+      fixStepIndicator(n)
+    }
+
+    function nextPrev(n) {
+      // This function will figure out which tab to display
+      var x = document.getElementsByClassName("tab");
+      // Hide the current tab:
+      x[currentTab].style.display = "none";
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form... :
+      if (currentTab >= x.length) {
+        //...the form gets submitted:
+        document.getElementById("regForm").submit();
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+
+
+
+    function fixStepIndicator(n) {
+      // This function removes the "active" class of all steps...
+      var i, x = document.getElementsByClassName("step");
+      for (i = 0; i < x.length; i++) {
+        x[i].className = x[i].className.replace(" active", "");
+      }
+      //... and adds the "active" class to the current step:
+      x[n].className += " active";
+  }
 </script>
 </html>

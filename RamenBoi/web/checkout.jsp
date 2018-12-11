@@ -43,9 +43,7 @@
         <div class="jumbotron p-3 p-md-3 text-white rounded bg-dark">
             <h1 id="headboi">Checkout</h1>
             <form action="reservation.jsp" method = "POST">
-            <%
-                out.print("Base Ramen: " + ramen.getDescription() + "<br>");
-                
+            <%      
                 try{
                    Class.forName("com.mysql.jdbc.Driver"); 
                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
@@ -61,7 +59,8 @@
                     out.println("Something went wrong !! Please try again");  
                 }
                                             
-                
+                     
+                out.print("Base Ramen: " + ramen.getDescription() + "<br>");
                 out.print("Ramen Preference: " + ramen.getPreference() + "<br>");
                 
                 if(toppings != null){
@@ -82,12 +81,13 @@
                 
                 out.print("Total Price:  " + ramen.getPrice());
             %>
+            <br>
             <input type="hidden" id="ramen" name="ramen" value="<%= ramen.getDescription() %>">
             <input type="hidden" id="branch" name="branch" value="<%= branch %>">
             <input type="hidden" id="preference" name="preference" value="<%= ramen.getPreference() %>">
             <input type="hidden" id="price" name="price" value=<%= ramen.getPrice() %>>  
             <br>
-            <a href="order_1.jsp" class="btn btn-light" role="button">Back</a>
+            <a href="order_1.jsp" class="btn btnramen" role="button">Back</a>
             <button type="submit" class="btn btnramen">Confirm Reservation</button>
             </form>
         </div>

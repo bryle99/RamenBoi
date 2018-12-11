@@ -15,7 +15,7 @@
         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/jquery.form-validator.min.js"></script>
-        <script src="assetsjs/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="assets/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/security.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         
