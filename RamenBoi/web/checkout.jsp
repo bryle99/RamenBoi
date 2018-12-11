@@ -64,15 +64,21 @@
                 out.print("Ramen Preference: " + ramen.getPreference() + "<br>");
                 
                 if(toppings != null){
+                    int noodlesqty, seaweedqty, moyashiqty, eggqty;
+                    noodlesqty = Integer.parseInt(request.getParameter("noodlesqty"));
+                    seaweedqty = Integer.parseInt(request.getParameter("seaweedqty"));
+                    moyashiqty = Integer.parseInt(request.getParameter("moyashiqty"));
+                    eggqty = Integer.parseInt(request.getParameter("eggqty"));
+                    
                     for (int i = 0; i < toppings.length; i++) {
                         if(toppings[i].equals("noodles")){
-                            ramen.addToppings(new noodles(ramen));
+                            ramen.addToppings(new noodles(ramen), noodlesqty);
                         }else if(toppings[i].equals("seaweed")){
-                            ramen.addToppings(new seaweed(ramen));
+                            ramen.addToppings(new seaweed(ramen), seaweedqty);
                         }else if(toppings[i].equals("moyashi")){
-                            ramen.addToppings(new moyashi(ramen));
+                            ramen.addToppings(new moyashi(ramen), moyashiqty);
                         }else if(toppings[i].equals("egg")){
-                            ramen.addToppings(new egg(ramen));
+                            ramen.addToppings(new egg(ramen), eggqty);
                         }
                     }
                     out.print("Toppings: " + ramen.getToppings() + "<br>");

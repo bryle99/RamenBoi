@@ -37,11 +37,11 @@ public class ramenBase {
     Noodle_firmness noodle_firmness;
     boolean isToppings;
 
-    public void addToppings(ingredientsDecorator topping){           
+    public void addToppings(ingredientsDecorator topping, int qty){           
         if(toppings == null){
             toppings = new ArrayList<ingredientsDecorator>(); 
         }
-        //topping.setQuantity(garlic);
+        topping.setQuantity(qty);
         toppings.add(topping);
         this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());       
     }
@@ -49,7 +49,7 @@ public class ramenBase {
     public String getToppings(){
         String ret = "";
         for(int i = 0; i < this.toppings.size(); i++){
-            ret += " | " + this.toppings.get(i).getDescription() ;
+            ret += " | " + this.toppings.get(i).getDescription() +": "+ this.toppings.get(i).getQuantity();
         }
         ret += " | ";
         

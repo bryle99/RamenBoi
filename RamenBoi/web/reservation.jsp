@@ -85,7 +85,7 @@
               }      
                %>
         </table >
-        <a href="home.jsp" class="btn btn-default" style="align: center">Go to Home</a>
-        <a href="order_1.jsp" class="btn btn-default" style="align: center">Go back to Order</a>
+        <a href="home.jsp" class="btn btnramen" style="align: center">Go to Home</a>
+        <a href="order_1.jsp" class="btn btnramen" style="align: center">Go back to Order</a>
     </body>
 </html>

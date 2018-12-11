@@ -11,7 +11,7 @@ package ramen;
  */
 abstract class ingredientsDecorator extends ramenBase{
     
-    int quantity = 1;
+    int quantity = 0;
     ramenBase ramen;
     
     public float getTotalCost(){

@@ -57,22 +57,22 @@
                                 <div class="form-check">
                                    <input class="form-check-input" type="radio" name="ramenBase" id="tonkotsu" value="tonkotsu" checked>
                                        <label class="form-check-label" for="tonkotsu">
-                                           <% tonkotsu t = new tonkotsu(); out.print(t.getDescription());%>
+                                           <% tonkotsu t = new tonkotsu(); out.print(t.getDescription());%>  |  Price: <% out.print(t.getPrice());%>
                                        </label>
                                    </br>
                                    <input class="form-check-input" type="radio" name="ramenBase" id="shoyu" value="shoyu">
                                        <label class="form-check-label" for="shoyu">
-                                           <% shoyu sh = new shoyu(); out.print(sh.getDescription());%> 
+                                           <% shoyu sh = new shoyu(); out.print(sh.getDescription());%>  |  Price: <% out.print(sh.getPrice());%> 
                                        </label>
                                    </br>
                                    <input class="form-check-input" type="radio" name="ramenBase" id="shio" value="shio">
                                        <label class="form-check-label" for="shio">
-                                           <% shio s = new shio(); out.print(s.getDescription());%>
+                                           <% shio s = new shio(); out.print(s.getDescription());%>  |  Price: <% out.print(s.getPrice());%> 
                                        </label>
                                    </br>
                                    <input class="form-check-input" type="radio" name="ramenBase" id="miso" value="miso">
                                        <label class="form-check-label" for="miso">
-                                           <% miso m = new miso(); out.print(m.getDescription());%>
+                                           <% miso m = new miso(); out.print(m.getDescription());%>  |  Price: <% out.print(m.getPrice());%> 
                                        </label>
                                 </div>
                              </div>
@@ -139,22 +139,22 @@
 
                     <div class="tab">
                       <h1>Add Toppings</h1>  
-                      <div class="form-check-inline">
+                      <div class="form-check-inline"><% ramenBase sample = new ramenBase();%>
                                     <label class="form-check-label">
-                                        <input type="number" name="noodleqty" style="width: 40px">
-                                        <input type="checkbox" class="form-check-input" name= "topping" value="noodles">Noodles 
+                                        <input type="number" name="noodlesqty" style="width: 35px" value=0 min=0 max=5 oninput="validity.valid||(value='');" id="noodlesqty" hidden>
+                                        <input type="checkbox" class="form-check-input" name= "topping" value="noodles" id="noodles"><% noodles n = new noodles(sample); out.print(n.getDescription());%>  |  Price: <% out.print(n.getPrice());%> 
                                     </label>
                                     <label class="form-check-label" style="margin-left: 50px;">
-                                        <input type="number" name="seaweedqty" style="width: 40px">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="seaweed">Seaweed 
+                                        <input type="number" name="seaweedqty" style="width: 35px" value=0 min=0 max=5 oninput="validity.valid||(value='');" id="seaweedqty" hidden>
+                                        <input type="checkbox" class="form-check-input" name="topping" value="seaweed" id="seaweed"><% seaweed se = new seaweed(sample); out.print(se.getDescription());%>  |  Price: <% out.print(se.getPrice());%>
                                     </label>
                                     <label class="form-check-label" style="margin-left: 50px;">
-                                        <input type="number" name="moyashiqty" style="width: 40px">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="moyashi">Moyashi 
+                                        <input type="number" name="moyashiqty" style="width: 35px" value=0 min=0 max=5 oninput="validity.valid||(value='');" id="moyashiqty" hidden>
+                                        <input type="checkbox" class="form-check-input" name="topping" value="moyashi" id="moyashi"><% moyashi mo = new moyashi(sample); out.print(mo.getDescription());%>  |  Price: <% out.print(mo.getPrice());%> 
                                     </label>
                                     <label class="form-check-label" style="margin-left: 50px;">
-                                        <input type="number" name="eggqty" style="width: 40px">
-                                        <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
+                                        <input type="number" name="eggqty" style="width: 35px" value=0 min=0 max=5 oninput="validity.valid||(value='');" id="eggqty" hidden>
+                                        <input type="checkbox" class="form-check-input" name="topping" value="egg" id="egg"><% egg eg = new egg(sample); out.print(eg.getDescription());%>  |  Price: <% out.print(eg.getPrice());%> 
                                     </label>
                         </div><br>
                     </div>
@@ -183,6 +183,46 @@
 <script>
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover();
+    });
+    
+    $("#noodles").change(function() {
+        if(this.checked) {
+            $('#noodlesqty').removeAttr('hidden');
+            $('#noodlesqty').val(1);
+        }else{
+            $('#noodlesqty').attr('hidden', true);
+            $('#noodlesqty').val(0);
+        }
+    });
+    
+    $("#seaweed").change(function() {
+        if(this.checked) {
+            $('#seaweedqty').removeAttr('hidden');
+            $('#seaweedqty').val(1);
+        }else{
+            $('#seaweedqty').attr('hidden', true);
+            $('#seaweedqty').val(0);
+        }
+    });
+    
+    $("#moyashi").change(function() {
+        if(this.checked) {
+            $('#moyashiqty').removeAttr('hidden');
+            $('#moyashiqty').val(1);
+        }else{
+            $('#moyashiqty').attr('hidden', true);
+            $('#moyashiqty').val(0);
+        }
+    });
+    
+    $("#egg").change(function() {
+        if(this.checked) {
+            $('#eggqty').removeAttr('hidden');
+            $('#eggqty').val(1);
+        }else{
+            $('#eggqty').attr('hidden', true);
+            $('#eggqty').val(0);
+        }
     });
     
     var currentTab = 0; // Current tab is set to be the first tab (0)
