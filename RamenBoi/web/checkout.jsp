@@ -64,11 +64,11 @@
             <input type="hidden" id="ramen" name="ramen" value="<%= ramen.getDescription() %>">
             <input type="hidden" id="branch" name="branch" value="<%= branch %>">
             <input type="hidden" id="" name="" value="">
-            <input type="hidden" id="price" name="price" value="<%= ramen.getPrice() %>">
-            </form>
+            <input type="hidden" id="price" name="price" value=<%= ramen.getPrice() %>>  
             <br>
             <a href="order_1.jsp" class="btn btn-light" role="button">Back</a>
             <button type="submit" class="btn btnramen">Confirm Reservation</button>
+            </form>
         </div>
         </div>
                         
