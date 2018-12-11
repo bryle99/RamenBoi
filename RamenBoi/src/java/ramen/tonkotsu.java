@@ -12,7 +12,7 @@ package ramen;
 public class tonkotsu extends ramenBase{
        
     public tonkotsu(){
-        this.setDescription("Tonkotsu Ramen");
+        this.setDescription("Tonkotsu");
         this.setPrice(299);
     }
 }

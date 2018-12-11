@@ -14,5 +14,6 @@ public class chashu extends ingredientsDecorator{
     public chashu(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(70);
+        this.setDescription("Chashu");
     }
 }

@@ -12,7 +12,7 @@ package ramen;
 public class shoyu extends ramenBase{
 
     public shoyu(){
-        this.setDescription("Shoyu Ramen");
+        this.setDescription("Shoyu");
         this.setPrice(270);
     }
 }
