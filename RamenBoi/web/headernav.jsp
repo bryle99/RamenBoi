@@ -117,7 +117,7 @@
                   <a class="link nav-link" href="info.jsp">Info</a>
                 </li>                
                 <li class="nav-item">
-                  <a class="link nav-link" href="#">Contact us</a>
+                  <a class="link nav-link" href="mailto:contactjohndelmar@gmail.com?Subject=Send Ramenboi your feedback">Contact us</a>
                 </li>
             </ul>
         </div>
