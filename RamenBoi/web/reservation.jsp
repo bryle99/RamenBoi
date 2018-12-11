@@ -10,8 +10,7 @@
 <%@ page import ="java.sql.*" %>
 
 <!DOCTYPE html>
-
-<%    
+<%
     try{
         Class.forName("com.mysql.jdbc.Driver"); 
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
@@ -21,8 +20,9 @@
         String preference = request.getParameter("preference");
         String toppings = request.getParameter("toppings");
         float price = new Float(request.getParameter("price")).floatValue();
+        int userID = Integer.parseInt(session.getAttribute("userID").toString());
 
-        PreparedStatement pst = conn.prepareStatement("INSERT INTO reservation (reservation_dateTime, ramen_base, branch_id, ramen_preference, ramen_toppings, total_price) VALUES (now(), ?, 1, ?, ?,"+ price +" )");
+        PreparedStatement pst = conn.prepareStatement("INSERT INTO reservation (user_id, reservation_dateTime, ramen_base, branch_id, ramen_preference, ramen_toppings, total_price) VALUES ("+ userID +", now(), ?, "+ branch +", ?, ?,"+ price +")");
         pst.setString(1, ramen);
         pst.setString(2, preference);
         pst.setString(3, toppings);
@@ -32,10 +32,9 @@
         }else{
             out.print("failed");
         }
-    }catch(Exception e){
-        out.println("Something went wrong !! Please try again");  
+    }catch(Exception e){       
+       out.println("Something went wrong !! Please try again");  
     }
 %>
-
     </body>
 </html>
