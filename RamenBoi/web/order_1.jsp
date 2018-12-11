@@ -142,15 +142,19 @@
                             <h1>Add Toppings</h1>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
+                                        <input type="number" name="noodleqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name= "topping" value="noodles">Noodles 
                                     </label>
-                                    <label class="form-check-label">
+                                    <label class="form-check-label" style="margin-left: 50px;">
+                                        <input type="number" name="seaweedqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name="topping" value="seaweed">Seaweed 
                                     </label>
-                                    <label class="form-check-label">
+                                    <label class="form-check-label" style="margin-left: 50px;">
+                                        <input type="number" name="moyashiqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name="topping" value="moyashi">Moyashi 
                                     </label>
-                                    <label class="form-check-label">
+                                    <label class="form-check-label" style="margin-left: 50px;">
+                                        <input type="number" name="eggqty" style="width: 40px">
                                         <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
                                     </label>
                                 </div><br>

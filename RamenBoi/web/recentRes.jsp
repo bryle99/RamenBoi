@@ -55,8 +55,6 @@
             }
 </style>
         <body>
-        <div class="container">
-            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
                  <h1 class="text-center tableheader">Recent Reservations</h1>
         <table class="usertable">
     <thead>
@@ -68,7 +66,6 @@
     <th>Preference</th>
     <th>Toppings</th>
     <th>Total Price</th>
-    <th>Picked up</th>
     <th>Pick up time</th>
 
     </tr>
@@ -94,7 +91,6 @@
     <td><%=res.getString("ramen_preference")%></td>
     <td><%=res.getString("ramen_toppings")%></td>
     <td><%=res.getString("total_price")%></td>
-    <td><%=res.getString("isPickedUp")%></td>
     <td><%=res.getString("pickUp_dateTime")%></td>
     
 </tr>
@@ -107,4 +103,5 @@
    }      
     %>
 </table >
+            </body>
 </html>
