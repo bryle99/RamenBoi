@@ -72,9 +72,9 @@
     <th>ID</th>
     <th>Last Name</th>
     <th>First Name</th>
-    <th>Username</th>
     <th>Password</th>
-    <th>Contact</th>
+    <th>E-mail</th>
+    
 
     </tr>
     </thead>
@@ -95,9 +95,8 @@
     <td><%=rs.getString("user_id")%></td>
     <td><%=rs.getString("last_name")%></td>
     <td><%=rs.getString("first_name")%></td>
-    <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
-    <td><%=rs.getString("contact")%></td>
+    <td><%=rs.getString("email")%></td>
 
     
 </tr>
@@ -118,10 +117,8 @@
     <th>ID</th>
     <th>Last Name</th>
     <th>First Name</th>
-    <th>Username</th>
     <th>Password</th>
-    <th>Contact</th>
-
+    <th>E-mail</th>
     </tr>
     </thead>
     <tbody>
@@ -141,9 +138,8 @@
     <td><%=rs.getString("user_id")%></td>
     <td><%=rs.getString("last_name")%></td>
     <td><%=rs.getString("first_name")%></td>
-    <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
-    <td><%=rs.getString("contact")%></td>
+    <td><%=rs.getString("email")%></td>
     
 </tr>
     
@@ -163,9 +159,8 @@
     <th>ID</th>
     <th>Last Name</th>
     <th>First Name</th>
-    <th>Username</th>
     <th>Password</th>
-    <th>Contact</th>
+    <th>E-mail</th>
     </tr>
     </thead>
     <tbody>
@@ -185,9 +180,8 @@
     <td><%=rs.getString("user_id")%></td>
     <td><%=rs.getString("last_name")%></td>
     <td><%=rs.getString("first_name")%></td>
-    <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
-    <td><%=rs.getString("contact")%></td>
+    <td><%=rs.getString("email")%></td>
     
 </tr>
     
@@ -208,9 +202,7 @@
     <th>ID</th>
     <th>Last Name</th>
     <th>First Name</th>
-    <th>Username</th>
     <th>Password</th>
-    <th>Contact</th>
     <th>Type</th>
     </tr>
     </thead>
