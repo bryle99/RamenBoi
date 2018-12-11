@@ -7,6 +7,30 @@
 <%@page import="ramen.*"%>
 
 <jsp:include page="headernav.jsp"/>
+<%@ page import ="java.sql.*" %>
+
+<% 
+    /*
+    try{
+        Class.forName("com.mysql.jdbc.Driver"); 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
+        
+                
+        PreparedStatement pst = conn.prepareStatement("SELECT branch_id, branch_location FROM branch");
+        ResultSet rs = pst.executeQuery(); 
+        
+        if(rs.next()){
+            branch_id = rs.getInt("branch_id");
+            branch_location = rs.getString("branch_location");
+        }else{
+            out.print("Error retrieving data");
+        }
+        
+    }catch(Exception e){
+        out.println("Something went wrong !! Please try again");  
+    }
+    */
+%>
 
         <div class="container">
             <div class="jumbotron p-2 p-md-4 text-white rounded bg-dark">
@@ -17,20 +41,34 @@
                            <div class="carousel-item active"> <!-- Start of carousel item 1 -->
                              <h1>Choose a branch</h1>
                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="branch" id="Cordova" value="Cordova" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        Cordova
+                                 <%
+                                     try{
+                                        Class.forName("com.mysql.jdbc.Driver"); 
+                                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
+                                        
+                                        PreparedStatement pst = conn.prepareStatement("SELECT branch_id, branch_location FROM branch");
+                                        ResultSet rs = pst.executeQuery(); 
+
+                                        while(rs.next()){
+                                            int branch_id;
+                                            String branch_location;
+
+                                            branch_id = rs.getInt("branch_id");
+                                            branch_location = rs.getString("branch_location");
+                                 %>
+                                 <input class="form-check-input" type="radio" name="branch" id="<%= branch_location %>" value=<%= branch_id%> checked>
+                                    <label class="form-check-label" for="<%= branch_location %>">
+                                        <%= branch_location %>
                                     </label>
-                                </br>
-                                <input class="form-check-input" type="radio" name="branch" id="Mandaue" value="Mandaue">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Mandaue
-                                    </label>
-                                </br>
-                                <input class="form-check-input" type="radio" name="branch" id="Mandaue" value="Mandaue">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Consolacion
-                                    </label>
+                                    </br>
+                                 <%
+                                        }
+
+                                    }catch(Exception e){
+                                        out.println("Something went wrong !! Please try again");  
+                                    }
+                                     
+                                 %>
                              </div>
                           </div> <!-- End of carousel item 1 -->
                             

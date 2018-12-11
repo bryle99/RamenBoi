@@ -48,8 +48,10 @@ public class ramenBase {
     public String getToppings(){
         String ret = "";
         for(int i = 0; i < this.toppings.size(); i++){
-            ret += this.toppings.get(i).getDescription() + " | ";
+            ret += " | " + this.toppings.get(i).getDescription() ;
         }
+        ret += " | ";
+        
         return ret;
     }
     
@@ -73,11 +75,12 @@ public class ramenBase {
     public String getPreference(){
         String ret = "";
         Integer i = new Integer(this.garlic);
-        ret += "Garlic: " + i.toString() + " | ";
-        ret += "Scallions: " + ((this.scallions)? "Yes" : "No") + " | ";
-        ret += "Spiciness: " + this.spiciness.name() + " | ";
-        ret += "Richness: " + this.richness.name() + " | ";
-        ret += "Noodle Firmness: " + this.noodle_firmness.name() + " | ";
+        ret += " | " + "Garlic: " + i.toString();
+        ret += " | " + "Scallions: " + ((this.scallions)? "Yes" : "No");
+        ret += " | " + "Spiciness: " + this.spiciness.name();
+        ret += " | " + "Richness: " + this.richness.name();
+        ret += " | " + "Noodle Firmness: " + this.noodle_firmness.name();
+        ret+= " | ";
         
         return ret;
     }
