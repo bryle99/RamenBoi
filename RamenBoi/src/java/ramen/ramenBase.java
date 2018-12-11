@@ -13,11 +13,15 @@ import java.util.Arrays;
  * @author Rafael
  */
 
+enum Spiciness{
+        None, Mild, Medium, Hot, VeryHot;
+}
+
 enum Richness{ 
         Light, Medium, Rich, VeryRich; 
 } 
 
-enum Firmness{
+enum Noodle_firmness{
         ExtraSoft, Soft, Medium, Firm, ExtraFirm;
 }
 
@@ -28,8 +32,9 @@ public class ramenBase {
     String description;
     int garlic;
     boolean scallions;
+    Spiciness spiciness;
     Richness richness;
-    Firmness firmness;
+    Noodle_firmness noodle_firmness;
     boolean isToppings;
 
     public void addToppings(ingredientsDecorator topping){           
@@ -43,7 +48,7 @@ public class ramenBase {
     public String getToppings(){
         String ret = "";
         for(int i = 0; i < this.toppings.size(); i++){
-            ret += this.toppings.get(i).getDescription() + " ";
+            ret += this.toppings.get(i).getDescription() + " | ";
         }
         return ret;
     }
@@ -51,31 +56,32 @@ public class ramenBase {
     public void setToppings(boolean x) {
         this.isToppings = x;
     }
-
-    public boolean isScallions() {
-        return scallions;
-    }
-
-    public void setScallions(boolean scallions) {
+    
+    public void setPreference(int garlic, boolean scallions, String spiciness, String richness, String noodle_firmness){
+        this.garlic = garlic;
         this.scallions = scallions;
+        
+        spiciness = spiciness.replaceAll("\\s+","");
+        richness = richness.replaceAll("\\s+","");
+        noodle_firmness = noodle_firmness.replaceAll("\\s+","");
+        
+        this.spiciness = Spiciness.valueOf(spiciness);
+        this.richness = Richness.valueOf(richness);
+        this.noodle_firmness = Noodle_firmness.valueOf(noodle_firmness);
     }
 
-    public Richness getRichness() {
-        return richness;    
+    public String getPreference(){
+        String ret = "";
+        Integer i = new Integer(this.garlic);
+        ret += "Garlic: " + i.toString() + " | ";
+        ret += "Scallions: " + ((this.scallions)? "Yes" : "No") + " | ";
+        ret += "Spiciness: " + this.spiciness.name() + " | ";
+        ret += "Richness: " + this.richness.name() + " | ";
+        ret += "Noodle Firmness: " + this.noodle_firmness.name() + " | ";
+        
+        return ret;
     }
-
-    public void setRichness(Richness richness) {
-        this.richness = richness;
-    }
-
-    public Firmness getFirmness() {
-        return firmness;
-    }
-
-    public void setFirmness(Firmness firmness) {
-        this.firmness = firmness;
-    }
-
+    
     public float getPrice() {
         return price;
     }

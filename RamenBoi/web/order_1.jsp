@@ -68,7 +68,6 @@
                                     <h4>Garlic</h4>    
                                        <select name="garlic"> 
                                            <option>0</option>
-                                           <option>1/2</option>
                                            <option>1</option>
                                            <option>2</option>
                                        </select>
@@ -82,7 +81,7 @@
                                     </div>
                                     <div class="form-check-inline">
                                            <label class="form-check-label" for="scallionNO">
-                                                       <input class="form-check-input" type="radio" name="scallions" id="scallionNo" value="no">No
+                                                       <input class="form-check-input" type="radio" name="scallions" id="scallionNo" value="no" checked>No
                                            </label>
                                      </div>
                                 </div>
@@ -91,7 +90,7 @@
                                <div class="col-md-2">
                                     <h4>Spiciness</h4>
                                         <select name="spiciness">
-                                            <option>No Spice</option>
+                                            <option>None</option>
                                             <option>Mild</option>
                                             <option>Medium</option>
                                             <option>Hot</option>
