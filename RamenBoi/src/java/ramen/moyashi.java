@@ -14,6 +14,7 @@ public class moyashi extends ingredientsDecorator{
     public moyashi(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(40);
+        this.setDescription("Moyashi");
     }
     
 }

@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : bryle
 */
 
+.btnramen{
+    background-color: #cdb79e;
+    color: black;
+}
+
 body{
     background-color: #fafad2;
 }

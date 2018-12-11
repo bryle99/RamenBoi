@@ -14,5 +14,6 @@ public class egg extends ingredientsDecorator{
     public egg(ramenBase ramen){
         this.ramen = ramen;
         this.setPrice(30);
+        this.setDescription("Soft Boiled Egg");
     }
 }

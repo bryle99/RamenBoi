@@ -12,7 +12,7 @@ package ramen;
 public class miso extends ramenBase{
         
     public miso(){
-        this.setDescription("Miso Ramen");
+        this.setDescription("Miso");
         this.setPrice(220);
     }
     

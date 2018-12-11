@@ -6,6 +6,7 @@
 package ramen;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -39,6 +40,14 @@ public class ramenBase {
         this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());       
     }
     
+    public String getToppings(){
+        String ret = "";
+        for(int i = 0; i < this.toppings.size(); i++){
+            ret += this.toppings.get(i).getDescription() + " ";
+        }
+        return ret;
+    }
+    
     public void setToppings(boolean x) {
         this.isToppings = x;
     }
@@ -52,7 +61,7 @@ public class ramenBase {
     }
 
     public Richness getRichness() {
-        return richness;
+        return richness;    
     }
 
     public void setRichness(Richness richness) {
