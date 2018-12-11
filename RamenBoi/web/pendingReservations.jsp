@@ -33,11 +33,12 @@
                 border-style: inset;
                 border-width: 1px;
             } 
+            
             .usertable {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
                 border-collapse: collapse;
                 text-align: center;
-                width: 75%;
+                width: 92%;
             }
 
               .usertable td, .usertable th {
@@ -64,7 +65,8 @@
         <table class="usertable">
     <thead>
     <tr>
-    <th>ID</th>
+    <th>Reservation ID</th>
+    <th>User ID</th>
     <th>Ramen Base</th>
     <th>Preference</th>
     <th>Toppings</th>
@@ -90,16 +92,15 @@
           
 %>
 <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-    
+    <td><%=rs.getString("reservation_id")%></td>
+    <td><%=rs.getString("user_id")%></td>
+    <td><%=rs.getString("ramen_base")%></td>
+    <td><%=rs.getString("ramen_preference")%></td>
+    <td><%=rs.getString("ramen_toppings")%></td>
+    <td><%=rs.getString("reservation_dateTime")%></td>
+    <td><%=rs.getString("total_price")%></td>
+    <td><%=rs.getString("branch_id")%></td>
+    <td><%=rs.getString("branch_location")%></td>
 </tr>
     
     </tbody>
