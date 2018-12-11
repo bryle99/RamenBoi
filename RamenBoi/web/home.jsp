@@ -59,6 +59,25 @@
                 
               </div>
             </div>
+            
+            <div style='margin-left: 25%;width: 50%;'>
+                <h6>Ramenboi was born in Cebu in 2018. Cebu is often the go-to area in the Philippines for those who want 
+                    to indulge in the best food our country has to offer.</h6>
+                <br>
+                <h6>The Man responsible for Ramenboi is Chef Chad Arimbay (or Chef Bird as he is popularly known). 
+                    Chef Bird has worked for several Japanese restaurants including a famous 
+                    Ramen Shop in Sapporo before finally deciding it was time to put up one of his own. 
+                    His motto for Ramenboi is "No Ramen, No Life" which he exlpains means Japanese people 
+                    cannot live without Ramen just like Filipinos who can't live without rice.</h6>
+                <br>
+                <h6>
+                   Despite being a relatively new brand, Ramenboi Practices the traditional way of making Ramen,
+                   choosing only the freshest ingredients and boiling the soup base for nearly a day to get the full flavor
+                   from the all the ingredients. After several Branches in Cebu, Ramenboi is finally here in Mandaue. 
+                   Taste authentic ramen here in Ramenboi. 
+                </h6>
+            </div>
+            <hr style='margin-top: 3em;margin-bottom: 5em;'>
         </body>
 </html>
 

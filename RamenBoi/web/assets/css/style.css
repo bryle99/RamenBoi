@@ -12,11 +12,28 @@ and open the template in the editor.
     background-color: #cdb79e;
     color: black;
 }
+
+.btnramenmaroon{
+    background-color: #8b0000;
+    color: white;
+}
+
+.btnramenmaroon:hover{
+    background-color: #700101;
+    color: white;
+}
+
+.btnramen:hover{
+    background-color: #ad9b87;
+}
 .btnramen1{
     background-color: 	#fafad2;
     color: black;
 }
 body{
+    background-color: #fafad2;
+}
+.ramen-bg{
     background-color: #fafad2;
 }
 
@@ -130,8 +147,14 @@ body{
 
             .dropdown:hover .dropdown-content {display: block;}
 
-            .dropdown:hover .dropbtn {background-color: #8b0000;}
+            .dropdown:hover .dropbtn {background-color: #700101;}
             
+            .profile-headers{
+                font-size: 20px;
+            }
             .profile-text{
-                font-size: 15px;    
+                font-size: 18px;    
+            }
+            .modal-text{
+                color: black;
             }
