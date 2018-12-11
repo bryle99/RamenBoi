@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ramen.*"%>
 <jsp:include page="headernav.jsp"/>
+<%@ page import ="java.sql.*" %>
 <%
     String ramenbase, branch, spiciness, richness, noodle_firmness;
     String[] toppings;
@@ -44,7 +45,23 @@
             <form action="reservation.jsp" method = "POST">
             <%
                 out.print("Base Ramen: " + ramen.getDescription() + "<br>");
-                //out.print(toppings.length);
+                
+                try{
+                   Class.forName("com.mysql.jdbc.Driver"); 
+                   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
+                                        
+                   PreparedStatement pst = conn.prepareStatement("SELECT branch_location FROM branch WHERE branch_id=" + branch);
+                   ResultSet rs = pst.executeQuery(); 
+                   
+                   if(rs.next()){
+                       out.print("Branch: " + rs.getString("branch_location") + "<br>");
+                   }    
+                   
+                }catch(Exception e){
+                    out.println("Something went wrong !! Please try again");  
+                }
+                                            
+                
                 out.print("Ramen Preference: " + ramen.getPreference() + "<br>");
                 
                 if(toppings != null){
@@ -67,7 +84,7 @@
             %>
             <input type="hidden" id="ramen" name="ramen" value="<%= ramen.getDescription() %>">
             <input type="hidden" id="branch" name="branch" value="<%= branch %>">
-            <input type="hidden" id="" name="" value="">
+            <input type="hidden" id="preference" name="preference" value="<%= ramen.getPreference() %>">
             <input type="hidden" id="price" name="price" value=<%= ramen.getPrice() %>>  
             <br>
             <a href="order_1.jsp" class="btn btn-light" role="button">Back</a>

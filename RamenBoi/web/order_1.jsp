@@ -7,30 +7,46 @@
 <%@page import="ramen.*"%>
 
 <jsp:include page="headernav.jsp"/>
+<%@ page import ="java.sql.*" %>
 
         <div class="container">
             <div class="jumbotron p-2 p-md-4 text-white rounded bg-dark">
 
                      <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">                       
-                         <form name="orderinfo" id="orderinfo" method="POST" action="checkout.jsp">                             
+                         <form name="orderinfo" id="orderinfo" method="POST" action="checkout.jsp">  
+
                         <div class="carousel-inner"> <!-- Start of carousel container -->
                            <div class="carousel-item active"> <!-- Start of carousel item 1 -->
                              <h1>Choose a branch</h1>
                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="branch" id="Cordova" value="Cordova" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                        Cordova
+                                 <%
+                                     try{
+                                        Class.forName("com.mysql.jdbc.Driver"); 
+                                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
+                                        
+                                        PreparedStatement pst = conn.prepareStatement("SELECT branch_id, branch_location FROM branch");
+                                        ResultSet rs = pst.executeQuery(); 
+
+                                        while(rs.next()){
+                                            int branch_id;
+                                            String branch_location;
+
+                                            branch_id = rs.getInt("branch_id");
+                                            branch_location = rs.getString("branch_location");
+                                 %>
+                                 <input class="form-check-input" type="radio" name="branch" id="<%= branch_location %>" value=<%= branch_id%> checked>
+                                    <label class="form-check-label" for="<%= branch_location %>">
+                                        <%= branch_location %>
                                     </label>
-                                </br>
-                                <input class="form-check-input" type="radio" name="branch" id="Mandaue" value="Mandaue">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Mandaue
-                                    </label>
-                                </br>
-                                <input class="form-check-input" type="radio" name="branch" id="Mandaue" value="Mandaue">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                        Consolacion
-                                    </label>
+                                    </br>
+                                 <%
+                                        }
+
+                                    }catch(Exception e){
+                                        out.println("Something went wrong !! Please try again");  
+                                    }
+                                     
+                                 %>
                              </div>
                           </div> <!-- End of carousel item 1 -->
                             
@@ -141,19 +157,20 @@
                             <button class="btn btn-light m-1" type="submit">Check Out</button>   
                         </div> <!-- End of carousel item -->
                         
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>   
                        
                       </div> <!-- End of carousel container -->
                     
                          </form> 
                          
-                           
+           
                     </div> 
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                        <h2><b><span class="btnramen"><</span></b></h2>
                     </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>                  
+                                   
               </div>
             </div>
         </body>

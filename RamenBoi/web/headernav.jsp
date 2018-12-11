@@ -79,11 +79,11 @@
                   if(session.getAttribute("userType").equals("admin")){
                       out.println("<a href='AdminUserList.jsp'>User List</a>");
                       out.println("<a href='PendingReservations.jsp'>Pending Reservations</a>");
+                      out.println("<a href='recentRes.jsp'>Recent Reservations</a>");
                   }else if(session.getAttribute("userType").equals("staff")){
                       out.println("<a href='StaffUserList.jsp'>User List</a>");
                       out.println("<a href='PendingReservations.jsp'>Pending Reservations</a>");
                   }
-                  
               %>
               <a href="login.jsp">Log Out</a>
               
