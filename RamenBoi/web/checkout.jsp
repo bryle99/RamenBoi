@@ -8,15 +8,17 @@
 <%@page import="ramen.*"%>
 <jsp:include page="headernav.jsp"/>
 <%
-    String ramenbase, branch, garlic, spiciness, richness, noodle_firmness;
+    String ramenbase, branch, spiciness, richness, noodle_firmness;
     String[] toppings;
     boolean scallions;
+    int garlic;
     ramenBase ramen = null;
    
     //if(request.getParameter("submit") != null){
         ramenbase = request.getParameter("ramenBase");
         branch = request.getParameter("branch");
-        garlic = request.getParameter("garlic");
+        garlic = Integer.parseInt(request.getParameter("garlic"));
+        scallions = (request.getParameter("scallions").equals("yes")? true : false);
         spiciness = request.getParameter("spiciness");
         richness = request.getParameter("richness");
         noodle_firmness = request.getParameter("noodle_firmness");
@@ -32,6 +34,7 @@
             ramen = new miso();
         }
         
+        ramen.setPreference(garlic, scallions, spiciness, richness, noodle_firmness);
     //}
          
 %>
@@ -42,7 +45,8 @@
             <%
                 out.print("Base Ramen: " + ramen.getDescription() + "<br>");
                 //out.print(toppings.length);
-
+                out.print("Ramen Preference: " + ramen.getPreference() + "<br>");
+                
                 if(toppings != null){
                     for (int i = 0; i < toppings.length; i++) {
                         if(toppings[i].equals("noodles")){
