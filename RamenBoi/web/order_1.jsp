@@ -168,7 +168,7 @@
            
                     </div> 
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="btnramen">BACK</span>
+                        <h2><b><span class="btnramen1"><</span></b></h2>
                     </a>
                                    
               </div>
