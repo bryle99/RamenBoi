@@ -10,9 +10,9 @@
 <html>
     <head>
          
-         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
+        <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -25,8 +25,8 @@
             
             hr{ 
                 display: block;
-                margin-top: 1.5em;
-                margin-bottom: 3.5em;
+                margin-top: 4.5em;
+                margin-bottom: 4.5em;
                 margin-left: auto;
                 margin-right: auto;
                 border-style: inset;

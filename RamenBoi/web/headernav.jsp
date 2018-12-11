@@ -9,13 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/open-iconic-bootstrap.css">
         <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         
         
         <title>Ramen Boi</title>
@@ -79,7 +78,10 @@
               <%
                   if(session.getAttribute("userType").equals("admin")){
                       out.println("<a href='AdminUserList.jsp'>User List</a>");
+                  }else if(session.getAttribute("userType").equals("staff")){
+                      out.println("<a href='StaffUserList.jsp'>User List</a>");
                   }
+                  
               %>
               <a href="login.jsp">Log Out</a>
               
