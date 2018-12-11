@@ -68,10 +68,6 @@ public class ramenBase {
         this.spiciness = Spiciness.valueOf(spiciness);
         this.richness = Richness.valueOf(richness);
         this.noodle_firmness = Noodle_firmness.valueOf(noodle_firmness);
-                
-        //this.spiciness = spiciness;
-        //this.richness = richness;
-        //this.noodle_firmness = noodle_firmness;
     }
 
     public String getPreference(){
