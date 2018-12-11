@@ -154,7 +154,7 @@
                                         <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
                                     </label>
                                 </div><br>
-                            <button class="btn btn-light m-1" type="submit">Check Out</button>   
+                            <button class="btn btnramen m-1" type="submit">Check Out</button>   
                         </div> <!-- End of carousel item -->
                         
                         <a class="carousel-control-next" href="#demo" data-slide="next">
