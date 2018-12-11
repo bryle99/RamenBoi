@@ -26,8 +26,8 @@
         color: red !important;
     }
     .chef{
-        height:600px;
-        width: 300px;
+        height:500px;
+        width: 270px;
         display: block;
         margin: 0 auto;
     }
@@ -78,7 +78,7 @@
                         <img class="chef" src="assets/img/Japchef.png">
                         <h3>Sous chef</h3>
                         <h3>Chef Francis Von Dominic Suson Arimbay</h3>
-                          
+                        <br><br>
                         <img class="chef" style="text-align:center" src="assets/img/RegChef.png">
                         <h3>Chef de Cuisine</h3>
                         <h3>Chef Chad Arimbay</h3>
