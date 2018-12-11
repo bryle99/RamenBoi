@@ -66,9 +66,9 @@
               <div class="modal-body">
                   <form action="register.jsp" method="POST">
                        <label for="email" class="registerLabel">Email:</label>
-                       <input type="email" name="email" id="emailinput" class="form-control" placeholder="sample@sample.com" required="" autofocus="">
+                       <input type="email" name="useremail" id="emailinput" class="form-control" placeholder="sample@sample.com" required="" autofocus="">
                        <label for="password" class="registerLabel">Password:</label>
-                       <input type="password" name="password" class="form-control">
+                       <input type="password" name="userpassword" class="form-control">
                        <label for="fname" class="registerLabel">First Name:</label>
                        <input type="text" name="fname" class="form-control">
                        <label for="lname" class="registerLabel">Last Name:</label>
