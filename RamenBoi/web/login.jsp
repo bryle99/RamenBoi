@@ -94,6 +94,9 @@
          if(session.getAttribute("Inactive") != null && session.getAttribute("Inactive").equals(1)){
             out.println("alert('Your Account is Inactive.')");
         }
+         if(session.getAttribute("registerSuccess") != null && session.getAttribute("registerSuccess").equals(1)){
+            out.println("alert('Registration Successful.')");
+        }
          session.invalidate();
     %>
     
