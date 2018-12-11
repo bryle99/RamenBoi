@@ -20,8 +20,10 @@
             if(rs.getBoolean("isActive")){
             String type = rs.getString("type");
             String userFname = rs.getString("first_name");
+            int userID = rs.getInt("user_id");
             session.setAttribute("userType",type);
             session.setAttribute("userFname", userFname);
+            session.setAttribute("userID",userID);
             
             String site = new String("http://localhost:8080/RamenBoi/home.jsp");
             response.setStatus(response.SC_MOVED_TEMPORARILY);
