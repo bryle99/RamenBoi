@@ -55,8 +55,6 @@
             }
 </style>
         <body>
-        <div class="container">
-            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
                  <h1 class="text-center tableheader">Recent Reservations</h1>
         <table class="usertable">
     <thead>
@@ -107,4 +105,5 @@
    }      
     %>
 </table >
+            </body>
 </html>
