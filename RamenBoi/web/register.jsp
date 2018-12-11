@@ -5,18 +5,19 @@
 <%
      try{
         Class.forName("com.mysql.jdbc.Driver");
-        String user_email = request.getParameter("email");   
+        String user_email = request.getParameter("useremail");   
         String user_fname = request.getParameter("fname");
         String user_lname = request.getParameter("lname");
-        String user_password = request.getParameter("password");
-      
+        String user_password = request.getParameter("userpassword");
+       
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement pst = conn.prepareStatement("INSERT INTO user(first_name, last_name, password, email) VALUES (?,?,?,?)");
+        PreparedStatement pst = conn.prepareStatement("INSERT INTO user (first_name, last_name, password, email) VALUES (?,?,?,?)");
         pst.setString(1, user_fname);
         pst.setString(2, user_lname);
         pst.setString(3, user_password);
         pst.setString(4, user_email);
-        pst.executeUpdate();                        
+        
+        pst.execute();                        
          
         String site = new String("http://localhost:8080/RamenBoi/login.jsp");
         response.setStatus(response.SC_MOVED_TEMPORARILY);
