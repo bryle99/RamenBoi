@@ -82,7 +82,7 @@
                }
                }catch(Exception e){       
                   out.println("Something went wrong !! Please try again");       
-              }      
+               }      
                %>
         </table >
         <a href="home.jsp" class="btn btnramen" style="align: center">Go to Home</a>

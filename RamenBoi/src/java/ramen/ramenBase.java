@@ -35,7 +35,7 @@ public class ramenBase {
     Spiciness spiciness;
     Richness richness;
     Noodle_firmness noodle_firmness;
-    boolean isToppings;
+    boolean isToppings = false;
 
     public void addToppings(ingredientsDecorator topping, int qty){           
         if(toppings == null){
@@ -43,7 +43,9 @@ public class ramenBase {
         }
         topping.setQuantity(qty);
         toppings.add(topping);
-        this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());       
+        this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());
+        this.isToppings = true;
+        
     }
     
     public String getToppings(){
@@ -56,9 +58,11 @@ public class ramenBase {
         return ret;
     }
     
-    public void setToppings(boolean x) {
-        this.isToppings = x;
+    public boolean getisToppings() {
+        return this.isToppings;
     }
+       
+    
     
     public void setPreference(int garlic, boolean scallions, String spiciness, String richness, String noodle_firmness){
         this.garlic = garlic;

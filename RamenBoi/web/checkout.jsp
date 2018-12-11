@@ -62,6 +62,7 @@
                      
                 out.print("Base Ramen: " + ramen.getDescription() + "<br>");
                 out.print("Ramen Preference: " + ramen.getPreference() + "<br>");
+ 
                 
                 if(toppings != null){
                     int noodlesqty, seaweedqty, moyashiqty, eggqty;
@@ -82,7 +83,12 @@
                         }
                     }
                     out.print("Toppings: " + ramen.getToppings() + "<br>");
+                    
+                }
+                if(ramen.getisToppings()){
                     out.print("<input type='hidden' id='toppings' name='toppings' value='" + ramen.getToppings() + "'>");
+                }else{
+                    out.print("<input type='hidden' id='toppings' name='toppings' value=''>");
                 }
                 
                 out.print("Total Price:  " + ramen.getPrice());
