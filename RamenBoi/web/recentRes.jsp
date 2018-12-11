@@ -68,6 +68,7 @@
     <th>Toppings</th>
     <th>Total Price</th>
     <th>Picked up</th>
+    <th>Pick up time</th>
 
     </tr>
     </thead>
@@ -93,7 +94,7 @@
     <td><%=res.getString("ramen_toppings")%></td>
     <td><%=res.getString("total_price")%></td>
     <td><%=res.getString("isPickedUp")%></td>
-
+    <td><%=res.getInt("pickUp_dateTime")%></td>
     
 </tr>
     
