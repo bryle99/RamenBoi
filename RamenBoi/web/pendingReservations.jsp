@@ -83,14 +83,21 @@
        
       
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement pst = conn.prepareStatement("SELECT b.branch_location, r.* FROM reservation r JOIN branch b on b.branch_id = r.branch_id WHERE r.isPickedUp = 0 ORDER BY r.reservation_dateTime ASC LIMIT 10");
+        PreparedStatement pst = conn.prepareStatement("SELECT b.*, r.* FROM reservation r JOIN branch b on b.branch_id = r.branch_id WHERE r.isPickedUp = 0 ORDER BY r.reservation_dateTime ASC LIMIT 10");
         ResultSet rs = pst.executeQuery();  
       
         while(rs.next()){
           
 %>
 <tr>
-   
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
 
     
 </tr>
