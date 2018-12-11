@@ -12,12 +12,12 @@
         <div class="container">
             <div class="jumbotron p-2 p-md-4 text-white rounded bg-dark">
 
-                     <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false">                       
+<!--                     <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false"> -->                      
                          <form name="orderinfo" id="orderinfo" method="POST" action="checkout.jsp">  
 
-                        <div class="carousel-inner"> <!-- Start of carousel container -->
-                           <div class="carousel-item active"> <!-- Start of carousel item 1 -->
-                             <h1>Choose a branch</h1>
+<!--                        <div class="carousel-inner"> <!-- Start of carousel container -->
+<!--                           <div class="carousel-item active"> <!-- Start of carousel item 1 -->
+                             <h1>Choose a Branch</h1>
                              <div class="form-check">
                                  <%
                                      try{
@@ -48,10 +48,10 @@
                                      
                                  %>
                              </div>
-                          </div> <!-- End of carousel item 1 -->
+ <!--                         </div> <!-- End of carousel item 1 -->
                             
-                        <div class="carousel-item"> 
-                             <h1>Choose a Ramen base</h1>
+ <!--                       <div class="carousel-item"> -->
+                             <h1>Choose a Ramen Base</h1>
                              <div>
                                 <div class="form-check">
                                    <input class="form-check-input" type="radio" name="ramenBase" id="tonkotsu" value="tonkotsu" checked>
@@ -75,10 +75,10 @@
                                        </label>
                                 </div>
                              </div>
-                        </div>     <!-- End of carousel item -->
+ <!--                         </div>     <!-- End of carousel item -->
                            
-                        <div class="carousel-item">
-                             <h1>Ramen preference</h1>
+ <!--                       <div class="carousel-item">-->
+                             <h1>Ramen Preference</h1>
                             <div class="row mb-2">
                                 <div class="col-md-2">
                                     <h4>Garlic</h4>    
@@ -134,11 +134,11 @@
                                         </select>
                                </div>
                             </div>
-                        </div><!-- End of carousel item -->
+  <!--                         </div><!-- End of carousel item -->
                         
                         
                         
-                        <div class="carousel-item"> 
+  <!--                         <div class="carousel-item">  -->
                             <h1>Add Toppings</h1>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
@@ -158,23 +158,23 @@
                                         <input type="checkbox" class="form-check-input" name="topping" value="egg">Soft Boiled Egg 
                                     </label>
                                 </div><br>
-                            <button class="btn btnramen m-1" type="submit">Check Out</button>   
-                        </div> <!-- End of carousel item -->
+                         <button class="btn btnramen m-1" type="submit">Check Out</button>   
+ <!--                         </div> <!-- End of carousel item -->
                         
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
+ <!--                         <a class="carousel-control-next" href="#demo" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>   
                        
-                      </div> <!-- End of carousel container -->
+  <!--                      </div> <!-- End of carousel container -->
                     
                          </form> 
                          
            
-                    </div> 
+<!--                      </div> 
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
                         <h2><b><span class="btnramen"><</span></b></h2>
                     </a>
-                                   
+-->                                  
               </div>
             </div>
         </body>
