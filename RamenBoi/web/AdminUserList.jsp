@@ -63,6 +63,7 @@
     <body>
         <div id="adminoptions">
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteUserModal">Active Status</button>
         </div>
        
         <h1 class="text-center tableheader">Admin List</h1>
@@ -201,8 +202,54 @@
 </table>
 <hr>
 
+<h1 class="text-center tableheader">Inactive User List</h1>
+<table class="usertable">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Contact</th>
+    <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
+         <%
+    try{
+        Class.forName("com.mysql.jdbc.Driver");
+       
+      
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
+        PreparedStatement pst = conn.prepareStatement("Select * from user where isActive = 0");
+        ResultSet rs = pst.executeQuery();  
+      
+        while(rs.next()){
+          
+%>
+<tr>
+    <td><%=rs.getString("user_id")%></td>
+    <td><%=rs.getString("last_name")%></td>
+    <td><%=rs.getString("first_name")%></td>
+    <td><%=rs.getString("username")%></td>
+    <td><%=rs.getString("password")%></td>
+    <td><%=rs.getString("contact")%></td>
+    <td><%=rs.getString("type")%></td>
+    
+</tr>
+    
+    </tbody>
+    <%
+    }
+    }catch(Exception e){       
+       out.println("Something went wrong !! Please try again");       
+   }      
+    %>
+</table>
+<hr>
 
-
+<!-- Change Type Modal -->
 <div id="changeTypeModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -230,6 +277,34 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+<div id="deleteUserModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+            <form  onsubmit="return confirm('Do you really want to submit the form?');" action="deleteUser.jsp" >
+                <label for="id"> User ID: </label>
+                <input  type='text' name="id" class="form-control">
+                <label for="type"> Set Active Status:  </label>
+                <select name='isActive' class="form-control">
+                    <option></option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                </select>
+                <br><br>
+                <input type="submit" class="btn btn-success">
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
 

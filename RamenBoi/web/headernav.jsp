@@ -74,7 +74,7 @@
     <body>
         <hr id="tophr">
         <div class="dropdown" id="dropdownmenu">
-            <button class="dropbtn">Hello, <% out.println(session.getAttribute("userFname")); %></button>
+            <button class="dropbtn btn">Hello, <% out.println(session.getAttribute("userFname")); %></button>
             <div class="dropdown-content">
               <%
                   if(session.getAttribute("userType").equals("admin")){
