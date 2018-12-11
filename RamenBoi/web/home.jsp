@@ -59,7 +59,9 @@
                 
               </div>
             </div>
-            
+            <div>
+                <h3 style="margin-left:43%;text-decoration: underline;margin-bottom: 2em;margin-top: 1em;">Ramenboi's History</h3>
+            </div>
             <div style='margin-left: 25%;width: 50%;'>
                 <h6>Ramenboi was born in Cebu in 2018. Cebu is often the go-to area in the Philippines for those who want 
                     to indulge in the best food our country has to offer.</h6>
@@ -67,7 +69,7 @@
                 <h6>The Man responsible for Ramenboi is Chef Chad Arimbay (or Chef Bird as he is popularly known). 
                     Chef Bird has worked for several Japanese restaurants including a famous 
                     Ramen Shop in Sapporo before finally deciding it was time to put up one of his own. 
-                    His motto for Ramenboi is "No Ramen, No Life" which he exlpains means Japanese people 
+                    His motto for Ramenboi is "No Ramen, No Life" which he explains means Japanese people 
                     cannot live without Ramen just like Filipinos who can't live without rice.</h6>
                 <br>
                 <h6>
