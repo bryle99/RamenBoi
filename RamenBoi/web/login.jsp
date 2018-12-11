@@ -12,8 +12,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <script type="text/javascript" charset="utf8" src="assets/js/jQuery.js"></script>
         <script type="text/javascript" charset="utf8" src="assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .registerLabel{
+                margin-top: 1em;
+            }
+            .registerSubmit{
+                margin-top: 2em;
+                margin-left: 42%;
+            }
+        </style>
     </head>
     <body>
         <div class="my-4 container text-center">
@@ -32,17 +44,57 @@
                   </label>
                 </div>
                 <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
-                <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+               
+            
               </form>
-            <button>asdsad</button>
+            Dont Have an account? Register <a data-target="#registermodal" data-toggle="modal" href="#registermodal">Here.</a>
+            
+                <p class="mt-5 mb-3 text-muted">©BirdBoys 2017-2018</p>
+           
         </div>
+        
+        <!--REGISTRATION MODAL-->
+      
+        <div id="registermodal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Register an Account.</h4>
+              </div>
+              <div class="modal-body">
+                  <form action="register.jsp" method="POST">
+                       <label for="email" class="registerLabel">Email:</label>
+                       <input type="email" name="email" id="emailinput" class="form-control" placeholder="sample@sample.com" required="" autofocus="">
+                       <label for="password" class="registerLabel">Password:</label>
+                       <input type="password" name="password" class="form-control">
+                       <label for="fname" class="registerLabel">First Name:</label>
+                       <input type="text" name="fname" class="form-control">
+                       <label for="lname" class="registerLabel">Last Name:</label>
+                       <input type="text" name="lname" class="form-control">
+                       <input type='submit' class='btn btn-success registerSubmit'>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
     </body>
 </html>
 <script>
     <%
         if(session.getAttribute("invalidLogin") != null && session.getAttribute("invalidLogin").equals(1)){
-            out.println("alert('Invalid E-mail / Password')");
+            out.println("alert('Invalid E-mail / Password.')");
         }
+         if(session.getAttribute("Inactive") != null && session.getAttribute("Inactive").equals(1)){
+            out.println("alert('Your Account is Inactive.')");
+        }
+         session.invalidate();
     %>
     
 </script>
