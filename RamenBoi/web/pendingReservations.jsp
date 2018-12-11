@@ -33,11 +33,12 @@
                 border-style: inset;
                 border-width: 1px;
             } 
+            
             .usertable {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
                 border-collapse: collapse;
                 text-align: center;
-                width: 75%;
+                width: 92%;
             }
 
               .usertable td, .usertable th {
@@ -56,15 +57,21 @@
                 background-color: #f4bc42;
                 color: white;
             }
-            
+            #adminoptions{
+                margin-left: 12.5%;
+            }
         </style>
     </head>
     <body>
+        <div id="adminoptions">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#setPickedUpModal">Set as Picked Up</button>
+        </div>
         <h1 class="text-center tableheader">Pending Reservations</h1>
         <table class="usertable">
     <thead>
     <tr>
-    <th>ID</th>
+    <th>Reservation ID</th>
+    <th>User ID</th>
     <th>Ramen Base</th>
     <th>Preference</th>
     <th>Toppings</th>
@@ -83,16 +90,22 @@
        
       
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement pst = conn.prepareStatement("SELECT b.branch_location, r.* FROM reservation r JOIN branch b on b.branch_id = r.branch_id WHERE r.isPickedUp = 0 ORDER BY r.reservation_dateTime ASC LIMIT 10");
+        PreparedStatement pst = conn.prepareStatement("SELECT b.*, r.* FROM reservation r JOIN branch b on b.branch_id = r.branch_id WHERE r.isPickedUp = 0 ORDER BY r.reservation_dateTime ASC LIMIT 10");
         ResultSet rs = pst.executeQuery();  
       
         while(rs.next()){
           
 %>
 <tr>
-   
-
-    
+    <td><%=rs.getString("reservation_id")%></td>
+    <td><%=rs.getString("user_id")%></td>
+    <td><%=rs.getString("ramen_base")%></td>
+    <td><%=rs.getString("ramen_preference")%></td>
+    <td><%=rs.getString("ramen_toppings")%></td>
+    <td><%=rs.getString("reservation_dateTime")%></td>
+    <td><%=rs.getString("total_price")%></td>
+    <td><%=rs.getString("branch_id")%></td>
+    <td><%=rs.getString("branch_location")%></td>
 </tr>
     
     </tbody>
@@ -103,5 +116,29 @@
    }      
     %>
 </table >
+
+
+<div id="setPickedUpModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+            <form  onsubmit="return confirm('Are You Sure?');" action="setPickedUp.jsp" >
+                <label for="id"> Reservation ID: </label>
+                <input  type='text' name="id" class="form-control">
+                
+                <br><br>
+                <input type="submit" class="btn btn-success">
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 </html>
