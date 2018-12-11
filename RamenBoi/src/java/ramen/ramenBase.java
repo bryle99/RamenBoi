@@ -41,6 +41,7 @@ public class ramenBase {
         if(toppings == null){
             toppings = new ArrayList<ingredientsDecorator>(); 
         }
+        //topping.setQuantity(garlic);
         toppings.add(topping);
         this.setPrice(toppings.get(toppings.size() - 1).getTotalCost());       
     }

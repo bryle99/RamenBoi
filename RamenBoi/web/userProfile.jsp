@@ -18,8 +18,8 @@
                         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root",""); 
                         int userID = Integer.parseInt(session.getAttribute("userID").toString());
 
-                        PreparedStatement pst = conn.prepareStatement("SELECT * FROM user WHERE user_id ="+ userID);
-
+                        PreparedStatement pst = conn.prepareStatement("SELECT *, branch_location FROM user AS u JOIN reservation AS r ON u.user_id = r.user_id JOIN branch AS b ON r.branch_id = b.branch_id WHERE u.user_id ="+ userID);
+                        
                         ResultSet rs = pst.executeQuery();
                         if(rs.next()){
                 %> 
@@ -37,12 +37,6 @@
                     <label for="email" class="col-md-2 col-form-label profile-headers">Email:</label>
                     <div class="col-md-4">
                       <input type="email" readonly class="form-control profile-text" id="email" value="<%= rs.getString("email") %>">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="contact" class="col-md-2 col-form-label profile-headers">Contact Number:</label>
-                    <div class="col-md-4">
-                      <input type="text" readonly class="form-control profile-text" id="contact" value="<%= rs.getString("contact") %>">
                     </div>
                   </div>
                   <button class="btn btnramen" data-toggle="modal" data-target="#passwordmodal">Change Password</button>
@@ -71,7 +65,7 @@
                                        </div>
                                        <div class="form-group">
                                          <label for="exampleInputPassword1">Retype Password</label>
-                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="pass" data-validation="confirmation" data-validation-confirm="newpass">
+                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="pass" data-validation="confirmation" data-validation-confirm="newpassword">
                                        </div>
                            
                           </div>
@@ -91,29 +85,79 @@
                             <th scope="col">Reservation ID</th>
                             <th scope="col">Branch</th>
                             <th scope="col">Reservation Date & Time</th>
-                            <th scope="col">Ramen</th> 
+                            <th scope="col">Ramen Info</th> 
                             <th scope="col">Status</th>
                           </tr>
                         </thead>
                         <tbody>
+                          <%
+                              do{
+                          %>
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row"><%= rs.getInt("reservation_id")%></th>
+                            <td><%= rs.getString("branch_location") %></td>
+                            <td><%= rs.getString("reservation_dateTime") %></td>
+                            <td><button class="btn btnramen" data-toggle="modal" data-target="#<%= rs.getInt("reservation_id")%>ramen">Show Ramen Info</button></td>
+                            <td><button class="btn btnramen" data-toggle="modal" data-target="#<%= rs.getInt("reservation_id")%>status">Show Reservation Status</button></td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                                <!-- Modal Ramen INFO-->
+                         <div class="modal fade" id="<%= rs.getInt("reservation_id")%>ramen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                             <div class="modal-content ramen-bg">
+                               <div class="modal-header">
+                                 <h5 class="modal-title modal-text" id="exampleModalLabel">Ramen Information</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                 </button>
+                               </div>
+                               <div class="modal-body">
+                                   <span class="profile-headers modal-text">Ramen Base: </span> <span class="profile-text modal-text"><%= rs.getString("ramen_base") %></span><br><br>
+                                   <span class="profile-headers modal-text">Ramen Preference: </span> <span class="profile-text modal-text"><%= rs.getString("ramen_preference") %></span><br><br>
+                                   <span class="profile-headers modal-text">Ramen Toppings: </span> <span class="profile-text modal-text"><%= rs.getString("ramen_toppings") %></span><br><br>
+                                   <span class="profile-headers modal-text">Total Price: </span> <span class="profile-text modal-text"><%= rs.getFloat("total_price") %></span>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                        
+                               <!-- Modal Reservation Status-->
+                         <div class="modal fade" id="<%= rs.getInt("reservation_id")%>status" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                             <div class="modal-content ramen-bg">
+                               <div class="modal-header">
+                                 <h5 class="modal-title modal-text" id="exampleModalLabel">Reservation Status</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                 </button>
+                               </div>
+                               <div class="modal-body">
+                                   <span class="profile-headers modal-text">Status: </span> 
+                                   <span class="profile-text modal-text">
+                                   <%
+                                       if(rs.getInt("isPickedUp") == 0){
+                                           out.print("Not Picked Up");
+                                   %>
+                                   </span><br><br>
+                                   <%
+                                       }else{
+                                           out.print("Picked up");
+                                           
+                                   %>
+                                   </span><br><br>
+                                   <span class="profile-headers modal-text">Pick Up Date & Time: </span> <span class="profile-text modal-text"> <%= rs.getString("pickUp_dateTime") %></span><br><br>
+                                   <%
+                                       }
+                                   %>
+
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                               
+                          <%       
+                              }while(rs.next()); 
+                              
+                          %>
                         </tbody>
                     </table>
                 <%

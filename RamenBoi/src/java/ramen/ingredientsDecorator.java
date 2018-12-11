@@ -17,5 +17,13 @@ abstract class ingredientsDecorator extends ramenBase{
     public float getTotalCost(){
         return ramen.getPrice() + (this.getPrice() * quantity);
     }
-    
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+      
 }
