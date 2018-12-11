@@ -17,9 +17,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <style>
-            
             table.usertable {
-                margin-left:auto; 
+                margin-left:auto;
                 margin-right:auto;
             }
             
