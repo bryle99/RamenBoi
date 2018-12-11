@@ -34,7 +34,9 @@
     h3{
         text-align: center;
     }
-    
+    .jumbotron{
+        height: 170em;
+    }
   
 </style>
 </head>
@@ -72,7 +74,7 @@
                       </div>        
                       <div id="section3" class="">         
                         <h1>Our proud chefs</h1>
-                       
+                        <br>
                         <img class="chef" src="assets/img/Japchef.png">
                         <h3>Sous chef</h3>
                         <h3>Chef Francis Von Dominic Suson Arimbay</h3>
