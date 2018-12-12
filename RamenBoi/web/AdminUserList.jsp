@@ -51,7 +51,7 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #f4bc42;
+                background-color: #2e2e2e;
                 color: white;
             }
             #adminoptions{
@@ -61,8 +61,8 @@
     </head>
     <body>
         <div id="adminoptions">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteUserModal">Active Status</button>
+            <button type="button" class="btn btnramenmaroon btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
+            <button type="button" class="btn btnramenmaroon btn-lg" data-toggle="modal" data-target="#deleteUserModal">Active Status</button>
         </div>
        
         <h1 class="text-center tableheader">Admin List</h1>

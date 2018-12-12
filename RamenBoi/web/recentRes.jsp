@@ -47,7 +47,7 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #f4bc42;
+                background-color: #2e2e2e;
                 color: white;
             }
             #adminoptions{
@@ -55,53 +55,55 @@
             }
 </style>
         <body>
-                 <h1 class="text-center tableheader">Recent Reservations</h1>
-        <table class="usertable">
-    <thead>
-    <tr>
-    <th>Reservation ID</th>
-    <th>Date</th>
-    <th>Ramen base</th>
-    <th>Branch</th>
-    <th>Preference</th>
-    <th>Toppings</th>
-    <th>Total Price</th>
-    <th>Pick up time</th>
+            <div class="container">
+                <h1 class="text-center tableheader">Recent Reservations</h1>
+                       <table class="usertable">
+                   <thead>
+                   <tr>
+                   <th>Reservation ID</th>
+                   <th>Date</th>
+                   <th>Ramen base</th>
+                   <th>Branch</th>
+                   <th>Preference</th>
+                   <th>Toppings</th>
+                   <th>Total Price</th>
+                   <th>Pick up time</th>
 
-    </tr>
-    </thead>
-    <tbody>
-         <%
-    try{
-        Class.forName("com.mysql.jdbc.Driver");
-       
-      
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
-        PreparedStatement j = conn.prepareStatement("Select * from reservation where isPickedUp = '1' ORDER BY pickUp_dateTime ASC LIMIT 10");
-        ResultSet res = j.executeQuery();  
-      
-        while(res.next()){
-          
-%>
-<tr>
-    <td><%=res.getInt("reservation_id")%></td>
-    <td><%=res.getString("reservation_dateTime")%></td>
-    <td><%=res.getString("ramen_base")%></td>
-    <td><%=res.getString("branch_id")%></td>
-    <td><%=res.getString("ramen_preference")%></td>
-    <td><%=res.getString("ramen_toppings")%></td>
-    <td><%=res.getString("total_price")%></td>
-    <td><%=res.getString("pickUp_dateTime")%></td>
-    
-</tr>
-    
-    </tbody>
-    <%
-    }
-    }catch(Exception e){       
-       out.println("Something went wrong !! Please try again");       
-   }      
-    %>
-</table >
+                   </tr>
+                   </thead>
+                   <tbody>
+                        <%
+                   try{
+                       Class.forName("com.mysql.jdbc.Driver");
+
+
+                       Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
+                       PreparedStatement j = conn.prepareStatement("Select * from reservation where isPickedUp = '1' ORDER BY pickUp_dateTime ASC LIMIT 10");
+                       ResultSet res = j.executeQuery();  
+
+                       while(res.next()){
+
+               %>
+               <tr>
+                   <td><%=res.getInt("reservation_id")%></td>
+                   <td><%=res.getString("reservation_dateTime")%></td>
+                   <td><%=res.getString("ramen_base")%></td>
+                   <td><%=res.getString("branch_id")%></td>
+                   <td><%=res.getString("ramen_preference")%></td>
+                   <td><%=res.getString("ramen_toppings")%></td>
+                   <td><%=res.getString("total_price")%></td>
+                   <td><%=res.getString("pickUp_dateTime")%></td>
+
+               </tr>
+
+                   </tbody>
+                   <%
+                   }
+                   }catch(Exception e){       
+                      out.println("Something went wrong !! Please try again");       
+                  }      
+                   %>
+               </table >
+            </div>
             </body>
 </html>

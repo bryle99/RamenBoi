@@ -46,7 +46,7 @@
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: #f4bc42;
+                background-color: #2e2e2e;
                 color: white;
             }
             #adminoptions{
@@ -56,8 +56,8 @@
     </head>
     <body>
         <div id="adminoptions">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#deleteUserModal">Active Status</button>
+            <button type="button" class="btn btnramenmaroon btn-lg" data-toggle="modal" data-target="#changeTypeModal">Change Type</button>
+            <button type="button" class="btn btnramenmaroon btn-lg" data-toggle="modal" data-target="#deleteUserModal">Active Status</button>
         </div>
         <h1 class="text-center tableheader">Staff List</h1>
 <table class="usertable">
@@ -66,9 +66,7 @@
     <th>ID</th>
     <th>Last Name</th>
     <th>First Name</th>
-    <th>Username</th>
     <th>Password</th>
-    <th>Contact</th>
 
     </tr>
     </thead>
@@ -89,9 +87,7 @@
     <td><%=rs.getString("user_id")%></td>
     <td><%=rs.getString("last_name")%></td>
     <td><%=rs.getString("first_name")%></td>
-    <td><%=rs.getString("username")%></td>
     <td><%=rs.getString("password")%></td>
-    <td><%=rs.getString("contact")%></td>
     
 </tr>
     
