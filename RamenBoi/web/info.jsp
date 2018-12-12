@@ -6,8 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
  <jsp:include page="headernav.jsp"/>
+ <%@page import ="java.sql.*" %>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +37,10 @@
     .jumbotron{
         height: 170em;
     }
+    td{
+        font-size: 2.5em;
+    }
+    
   
 </style>
 </head>
@@ -68,10 +72,44 @@
                         <p>At <b>RamenBoi</b> we don’t diversify our menu, but concentrate only on the best Ramen. Ramen is offered in a wide range of types, from those based on soy sauce, salt, or miso paste, as well as varying broths like seafood-based broths or meat-based broths. The safety and satisfaction of our customers is our priority. That is why we only use the highest-in-quality products for the creation of our ramen. Our professionals are masters of the complicated techniques involved in ramen making, and they always pursue a higher level of exquisiteness for our customers.
                             Our mission is a quest for new ideas, a thorough search for new ways of bringing more delight to the palate of our customers.</p>
                       </div>
+                        
                       <div id="section2" class=""> 
                         <h1>Branches</h1>
-                        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+                            <table class="usertable">
+                            <thead>
+                            <tr>
+                            <th>Branch ID</th>
+                            <th>Branch Location</th>
+                            <th>Branch Contact Number</th>
+                        <%
+                            try{
+                            Class.forName("com.mysql.jdbc.Driver");
+
+
+                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ramenboi","root","");    
+                            PreparedStatement j = conn.prepareStatement("Select * from branch LIMIT 10");
+                            ResultSet res = j.executeQuery();  
+
+                            while(res.next()){
+
+                            %>
+                            <tr>
+                                <td><%=res.getInt("branch_id")%></td>
+                                <td><%=res.getString("branch_location")%></td>
+                                <td><%=res.getString("branch_phoneNum")%></td>
+                            </tr>
+
+                                </tbody>
+                                <%
+                                }
+                                }catch(Exception e){       
+                                   out.println("Something went wrong !! Please try again");       
+                               }      
+                                %>
+                            </table >
+                        <p></p>
                       </div>        
+                        
                       <div id="section3" class="">         
                         <h1>Our proud chefs</h1>
                         <br>
