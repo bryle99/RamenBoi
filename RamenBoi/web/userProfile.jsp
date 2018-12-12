@@ -183,4 +183,9 @@
             session.setAttribute("changePasswordSuccess",0);
         }
     %>
+     $(document).ready(function(){
+        $.validate({
+           modules : 'security'
+         });
+      });
 </script>
